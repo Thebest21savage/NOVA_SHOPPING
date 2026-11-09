@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Nova</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="account-page">
+
+
+    <!-- FUTURISTIC BACKGROUND -->
+
+    <div class="account-background">
+
+        <div class="account-orb account-orb-one"></div>
+        <div class="account-orb account-orb-two"></div>
+
+        <div class="account-grid"></div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="account-header">
+
+        <a href="../index.html" class="logo">
+            <span class="logo-symbol">✦</span>
+            NOVA
+        </a>
+
+
+        <nav class="account-nav">
+
+            <a href="discover.html">Discover</a>
+            <a href="search.html">Search</a>
+            <a href="compare.html">Compare</a>
+            <a href="trending.html">Trending</a>
+
+        </nav>
+
+
+        <div class="account-header-actions">
+
+            <button class="icon-button" aria-label="Saved products">
+                ♡
+            </button>
+
+            <button class="profile-mini-button" aria-label="Your profile">
+                N
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="account-main">
+
+
+        <!-- PROFILE HERO -->
+
+        <section class="profile-hero">
+
+            <div class="profile-hero-content">
+
+                <div class="profile-avatar">
+
+                    <span>N</span>
+
+                    <button class="edit-avatar-button">
+                        ✎
+                    </button>
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <p class="profile-label">
+                        YOUR NOVA PROFILE
+                    </p>
+
+                    <h1>
+                        Welcome back,
+                        <span>Nova user.</span>
+                    </h1>
+
+                    <p class="profile-description">
+                        Your shopping world, personalized around you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="edit-profile-button">
+                <span>✎</span>
+                Edit profile
+            </button>
+
+        </section>
+
+
+        <!-- ACCOUNT OVERVIEW -->
+
+        <section class="account-overview">
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon">
+                    ♡
+                </div>
+
+                <div>
+
+                    <p>Saved products</p>
+
+                    <strong id="savedCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <span class="overview-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon">
+                    ◫
+                </div>
+
+                <div>
+
+                    <p>Orders</p>
+
+                    <strong id="ordersCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <span class="overview-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article class="overview-card">
+
+                <div class="overview-icon">
+                    ⚖
+                </div>
+
+                <div>
+
+                    <p>Comparisons</p>
+
+                    <strong id="comparisonsCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <span class="overview-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <article class="overview-card nova-score-card">
+
+                <div class="overview-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <p>Nova profile</p>
+
+                    <strong>
+                        Building
+                    </strong>
+
+                </div>
+
+                <span class="overview-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="account-dashboard">
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="account-sidebar">
+
+
+                <button class="account-tab active" data-tab="overview">
+
+                    <span class="tab-icon">◉</span>
+                    Overview
+
+                </button>
+
+
+                <button class="account-tab" data-tab="saved">
+
+                    <span class="tab-icon">♡</span>
+                    Saved
+
+                </button>
+
+
+                <button class="account-tab" data-tab="orders">
+
+                    <span class="tab-icon">◫</span>
+                    Orders
+
+                </button>
+
+
+                <button class="account-tab" data-tab="preferences">
+
+                    <span class="tab-icon">✦</span>
+                    Nova preferences
+
+                </button>
+
+
+                <button class="account-tab" data-tab="settings">
+
+                    <span class="tab-icon">⚙</span>
+                    Settings
+
+                </button>
+
+
+                <div class="sidebar-bottom">
+
+                    <button class="sign-out-button">
+                        <span>↗</span>
+                        Sign out
+                    </button>
+
+                </div>
+
+
+            </aside>
+
+
+            <!-- CONTENT -->
+
+            <div class="account-content">
+
+
+                <!-- OVERVIEW TAB -->
+
+                <div class="account-tab-content active" id="overview">
+
+
+                    <div class="content-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                DASHBOARD
+                            </p>
+
+                            <h2>
+                                Your shopping,
+                                <span>all in one place.</span>
+                            </h2>
+
+                        </div>
+
+
+                        <button class="small-nova-button">
+                            ✦ Ask Nova
+                        </button>
+
+                    </div>
+
+
+                    <!-- NOVA INSIGHT CARD -->
+
+                    <div class="profile-nova-card">
+
+                        <div class="profile-nova-glow"></div>
+
+
+                        <div class="profile-nova-content">
+
+                            <div class="nova-card-header">
+
+                                <div class="nova-avatar small">
+                                    ✦
+                                </div>
+
+                                <div>
+
+                                    <p>NOVA AI</p>
+
+                                    <h3>
+                                        Your shopping profile is just getting started.
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <p class="nova-card-description">
+                                As you search, save, and compare products,
+                                Nova will eventually learn your preferences
+                                and make smarter recommendations.
+                            </p>
+
+
+                            <button class="teach-nova-button">
+                                Personalize Nova
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+
+                        <div class="profile-nova-visual">
+
+                            <div class="visual-ring ring-one"></div>
+                            <div class="visual-ring ring-two"></div>
+
+                            <div class="visual-core">
+                                ✦
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <div class="activity-section">
+
+                        <div class="subsection-heading">
+
+                            <div>
+
+                                <p class="section-label">
+                                    RECENT ACTIVITY
+                                </p>
+
+                                <h3>
+                                    Your latest shopping activity
+                                </h3>
+
+                            </div>
+
+                            <button class="text-button">
+                                View all →
+                            </button>
+
+                        </div>
+
+
+                        <div class="empty-activity">
+
+                            <div class="empty-icon">
+                                ◌
+                            </div>
+
+                            <h4>
+                                Nothing here yet
+                            </h4>
+
+                            <p>
+                                Start exploring products and your activity
+                                will appear here.
+                            </p>
+
+                            <a href="search.html" class="explore-button">
+                                Explore products
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SAVED TAB -->
+
+                <div class="account-tab-content" id="saved">
+
+                    <div class="content-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                YOUR COLLECTION
+                            </p>
+
+                            <h2>
+                                Saved
+                                <span>for later.</span>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Your saved list is empty
+                        </h3>
+
+                        <p>
+                            Save products you love and come back to them
+                            anytime.
+                        </p>
+
+                        <a href="search.html" class="explore-button">
+                            Start exploring
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORDERS TAB -->
+
+                <div class="account-tab-content" id="orders">
+
+                    <div class="content-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                PURCHASE HISTORY
+                            </p>
+
+                            <h2>
+                                Your
+                                <span>orders.</span>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ◫
+                        </div>
+
+                        <h3>
+                            No orders yet
+                        </h3>
+
+                        <p>
+                            Orders from participating Nova stores will
+                            eventually appear here.
+                        </p>
+
+                        <a href="search.html" class="explore-button">
+                            Discover products
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOVA PREFERENCES TAB -->
+
+                <div class="account-tab-content" id="preferences">
+
+                    <div class="content-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                PERSONALIZATION
+                            </p>
+
+                            <h2>
+                                Teach Nova
+                                <span>what you like.</span>
+                            </h2>
+
+                            <p class="content-description">
+                                These preferences will eventually help Nova
+                                give you more useful recommendations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preferences-grid">
+
+
+                        <div class="preference-card">
+
+                            <div class="preference-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Your priorities
+                            </h3>
+
+                            <p>
+                                What matters most when you shop?
+                            </p>
+
+
+                            <div class="preference-options">
+
+                                <button class="preference-option">
+                                    Best price
+                                </button>
+
+                                <button class="preference-option">
+                                    Quality
+                                </button>
+
+                                <button class="preference-option">
+                                    Fast delivery
+                                </button>
+
+                                <button class="preference-option">
+                                    Top reviews
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="preference-card">
+
+                            <div class="preference-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Your style
+                            </h3>
+
+                            <p>
+                                Help Nova understand your shopping style.
+                            </p>
+
+
+                            <div class="preference-options">
+
+                                <button class="preference-option">
+                                    Budget-friendly
+                                </button>
+
+                                <button class="preference-option">
+                                    Premium
+                                </button>
+
+                                <button class="preference-option">
+                                    Trending
+                                </button>
+
+                                <button class="preference-option">
+                                    Sustainable
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button class="save-preferences-button">
+                        Save preferences
+                    </button>
+
+
+                </div>
+
+
+                <!-- SETTINGS TAB -->
+
+                <div class="account-tab-content" id="settings">
+
+                    <div class="content-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                ACCOUNT
+                            </p>
+
+                            <h2>
+                                Settings &
+                                <span>privacy.</span>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+
+                        <button class="settings-item">
+
+                            <div>
+
+                                <strong>
+                                    Profile information
+                                </strong>
+
+                                <span>
+                                    Manage your account details
+                                </span>
+
+                            </div>
+
+                            <span>→</span>
+
+                        </button>
+
+
+                        <button class="settings-item">
+
+                            <div>
+
+                                <strong>
+                                    Notifications
+                                </strong>
+
+                                <span>
+                                    Control what Nova sends you
+                                </span>
+
+                            </div>
+
+                            <span>→</span>
+
+                        </button>
+
+
+                        <button class="settings-item">
+
+                            <div>
+
+                                <strong>
+                                    Privacy
+                                </strong>
+
+                                <span>
+                                    Control your data and personalization
+                                </span>
+
+                            </div>
+
+                            <span>→</span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

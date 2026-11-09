@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search | Nova</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="search-page">
+
+    <div class="search-background">
+        <div class="search-orb orb-one"></div>
+        <div class="search-orb orb-two"></div>
+        <div class="search-grid"></div>
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="search-header">
+
+        <a href="../index.html" class="logo">
+            <span class="logo-symbol">✦</span>
+            NOVA
+        </a>
+
+        <div class="search-header-bar">
+
+            <span class="search-symbol">⌕</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="What are you looking for?"
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+        <div class="search-header-actions">
+
+            <button class="icon-button" aria-label="Saved products">
+                ♡
+            </button>
+
+            <button class="icon-button" aria-label="Account">
+                ◉
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN SEARCH AREA -->
+
+    <main class="search-main">
+
+
+        <!-- SEARCH INTRO -->
+
+        <section class="search-intro">
+
+            <div class="search-label">
+                <span class="label-dot"></span>
+                NOVA SEARCH
+            </div>
+
+            <h1>
+                Shopping,
+                <span>understood.</span>
+            </h1>
+
+            <p>
+                Tell Nova what you actually want. We'll help you find,
+                compare, and understand the best options.
+            </p>
+
+        </section>
+
+
+        <!-- AI SEARCH PANEL -->
+
+        <section class="ai-search-panel" id="aiSearchPanel">
+
+            <div class="ai-search-header">
+
+                <div class="nova-identity">
+
+                    <div class="nova-avatar">
+                        ✦
+                    </div>
+
+                    <div>
+                        <h2>Nova AI</h2>
+                        <p>Your personal shopping assistant</p>
+                    </div>
+
+                </div>
+
+                <div class="nova-status">
+                    <span class="status-indicator"></span>
+                    Ready
+                </div>
+
+            </div>
+
+
+            <div class="ai-search-content">
+
+                <div class="ai-search-message">
+
+                    <div class="ai-message-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <p class="ai-message-name">
+                            NOVA
+                        </p>
+
+                        <p id="aiResponse">
+                            Tell me what you're looking for, and I'll help
+                            narrow down the best options for you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-suggestions">
+
+                    <button class="search-suggestion">
+                        Best headphones for the gym under $150
+                    </button>
+
+                    <button class="search-suggestion">
+                        Find me a laptop for college
+                    </button>
+
+                    <button class="search-suggestion">
+                        Compare the best running shoes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS AREA -->
+
+        <section class="results-section">
+
+
+            <!-- RESULTS HEADER -->
+
+            <div class="results-top">
+
+                <div>
+
+                    <p class="results-label">
+                        SEARCH RESULTS
+                    </p>
+
+                    <h2 id="resultsTitle">
+                        Explore products
+                    </h2>
+
+                    <p class="results-description" id="resultsDescription">
+                        Search for anything and Nova will help you find
+                        what fits you best.
+                    </p>
+
+                </div>
+
+
+                <div class="results-actions">
+
+                    <button class="sort-button">
+                        Sort by
+                        <span>⌄</span>
+                    </button>
+
+                    <button class="compare-selected-button">
+                        Compare
+                        <span id="compareCount">0</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS LAYOUT -->
+
+            <div class="results-layout">
+
+
+                <!-- FILTERS -->
+
+                <aside class="filters-panel">
+
+                    <div class="filters-header">
+
+                        <h3>Filters</h3>
+
+                        <button id="clearFilters">
+                            Clear
+                        </button>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <button class="filter-title">
+                            Price
+                            <span>⌃</span>
+                        </button>
+
+                        <div class="price-inputs">
+
+                            <input
+                                type="number"
+                                placeholder="Min"
+                            >
+
+                            <span>—</span>
+
+                            <input
+                                type="number"
+                                placeholder="Max"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <button class="filter-title">
+                            Category
+                            <span>⌃</span>
+                        </button>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Electronics
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Fashion
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Home
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Sports
+                        </label>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <button class="filter-title">
+                            Rating
+                            <span>⌃</span>
+                        </button>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            4.5 & up
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            4.0 & up
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            3.5 & up
+                        </label>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- PRODUCT RESULTS -->
+
+                <div class="products-area">
+
+                    <div class="products-status">
+
+                        <p>
+                            <span id="productCount">0</span>
+                            products found
+                        </p>
+
+                        <button class="ai-view-button">
+                            ✦ Nova's picks
+                        </button>
+
+                    </div>
+
+
+                    <div class="products-grid" id="productsGrid">
+
+
+                        <!-- PRODUCT CARD 1 -->
+
+                        <article class="product-card">
+
+                            <div class="product-image product-image-one">
+
+                                <span class="product-badge">
+                                    NOVA PICK
+                                </span>
+
+                                <button class="save-product">
+                                    ♡
+                                </button>
+
+                                <div class="product-placeholder">
+                                    ◉
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <p class="product-store">
+                                    FEATURED STORE
+                                </p>
+
+                                <h3>
+                                    Wireless Pro Headphones
+                                </h3>
+
+                                <div class="product-rating">
+                                    ★ 4.8
+                                    <span>(2,431)</span>
+                                </div>
+
+                                <div class="product-price-row">
+
+                                    <div>
+                                        <strong>$129</strong>
+                                        <span>$159</span>
+                                    </div>
+
+                                    <button class="add-compare">
+                                        + Compare
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT CARD 2 -->
+
+                        <article class="product-card">
+
+                            <div class="product-image product-image-two">
+
+                                <button class="save-product">
+                                    ♡
+                                </button>
+
+                                <div class="product-placeholder">
+                                    ◒
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <p class="product-store">
+                                    VERIFIED SELLER
+                                </p>
+
+                                <h3>
+                                    Active Noise Cancelling Headphones
+                                </h3>
+
+                                <div class="product-rating">
+                                    ★ 4.7
+                                    <span>(1,892)</span>
+                                </div>
+
+                                <div class="product-price-row">
+
+                                    <div>
+                                        <strong>$119</strong>
+                                        <span>$149</span>
+                                    </div>
+
+                                    <button class="add-compare">
+                                        + Compare
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT CARD 3 -->
+
+                        <article class="product-card">
+
+                            <div class="product-image product-image-three">
+
+                                <span class="product-badge">
+                                    TRENDING
+                                </span>
+
+                                <button class="save-product">
+                                    ♡
+                                </button>
+
+                                <div class="product-placeholder">
+                                    ◌
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <p class="product-store">
+                                    TOP RATED
+                                </p>
+
+                                <h3>
+                                    Studio Wireless Headphones
+                                </h3>
+
+                                <div class="product-rating">
+                                    ★ 4.9
+                                    <span>(987)</span>
+                                </div>
+
+                                <div class="product-price-row">
+
+                                    <div>
+                                        <strong>$139</strong>
+                                        <span>$169</span>
+                                    </div>
+
+                                    <button class="add-compare">
+                                        + Compare
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT CARD 4 -->
+
+                        <article class="product-card">
+
+                            <div class="product-image product-image-four">
+
+                                <button class="save-product">
+                                    ♡
+                                </button>
+
+                                <div class="product-placeholder">
+                                    ◐
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <p class="product-store">
+                                    BEST VALUE
+                                </p>
+
+                                <h3>
+                                    Everyday Wireless Headphones
+                                </h3>
+
+                                <div class="product-rating">
+                                    ★ 4.6
+                                    <span>(3,104)</span>
+                                </div>
+
+                                <div class="product-price-row">
+
+                                    <div>
+                                        <strong>$89</strong>
+                                        <span>$109</span>
+                                    </div>
+
+                                    <button class="add-compare">
+                                        + Compare
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <button class="load-more-button">
+                        Load more products
+                        <span>↓</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOVA INSIGHT -->
+
+        <section class="nova-insight">
+
+            <div class="insight-symbol">
+                ✦
+            </div>
+
+            <div class="insight-content">
+
+                <p class="section-label">
+                    NOVA INSIGHT
+                </p>
+
+                <h2>
+                    Don't just find products.
+                    <span>Understand them.</span>
+                </h2>
+
+                <p>
+                    Nova will eventually analyze prices, reviews, features,
+                    and your preferences to help you make a smarter choice.
+                </p>
+
+            </div>
+
+            <button class="insight-button" id="askNovaAgain">
+                Ask Nova
+                <span>→</span>
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FLOATING COMPARE BAR -->
+
+    <div class="floating-compare-bar" id="compareBar">
+
+        <div>
+
+            <p>
+                PRODUCTS SELECTED
+            </p>
+
+            <strong>
+                <span id="floatingCompareCount">0</span>
+                ready to compare
+            </strong>
+
+        </div>
+
+        <button id="goToCompare">
+            Compare products
+            →
+        </button>
+
+    </div>
+
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
