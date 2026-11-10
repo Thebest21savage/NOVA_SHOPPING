@@ -2,7 +2,7 @@
 // Required Supabase Edge Function secrets: EBAY_CLIENT_ID, EBAY_CLIENT_SECRET.
 // Optional: EBAY_MARKETPLACE_ID (defaults to EBAY_US).
 const cors = {
-  "Access-Control-Allow-Origin": Deno.env.get("SITE_URL") ?? "*",
+  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
