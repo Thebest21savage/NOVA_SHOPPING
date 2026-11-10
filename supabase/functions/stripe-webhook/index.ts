@@ -13,7 +13,7 @@ Deno.serve(async(req)=>{
  const admin=createClient(Deno.env.get("SUPABASE_URL")!,Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
  if(event.type==="checkout.session.completed"){
   const session=event.data.object as Stripe.Checkout.Session;const orderId=session.metadata?.order_id;
-  if(orderId){await admin.from("orders").update({status:"paid",stripe_session_id:session.id}).eq("id",orderId);}
+  if(orderId){const {data,error}=await admin.rpc("complete_nova_order",{p_order_id:orderId,p_session_id:session.id});if(error)throw error;if(data!==true)console.error("Order requires inventory review:",orderId);}
  }
  if(event.type==="checkout.session.expired"){
   const session=event.data.object as Stripe.Checkout.Session;const orderId=session.metadata?.order_id;
