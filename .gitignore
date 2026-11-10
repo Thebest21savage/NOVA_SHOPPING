@@ -1,0 +1,11 @@
+# Local Supabase browser config (public anon key only)
+config.js
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated files
+node_modules/
+.DS_Store
