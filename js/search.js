@@ -16,6 +16,22 @@ function scrollToProducts() {
   document.getElementById("productsSection").scrollIntoView({behavior:"smooth"});
 }
 
+function scrollToCategories() {
+  document.getElementById("categoriesSection").scrollIntoView({behavior:"smooth"});
+}
+
+function showDeals(render) {
+  viewState.category = "All";
+  viewState.dealsOnly = true;
+  viewState.filter = "Deals";
+  viewState.query = "";
+  resetDiscovery();
+  document.getElementById("searchInput").value = "";
+  document.querySelectorAll("[data-filter]").forEach(button => button.classList.toggle("active", button.dataset.filter === "Deals"));
+  render();
+  scrollToProducts();
+}
+
 export function showDiscoveryResults(ids, render) {
   viewState.category = "All";
   viewState.filter = "All";
@@ -30,6 +46,8 @@ export function showDiscoveryResults(ids, render) {
 }
 
 export function initSearch(render) {
+  document.getElementById("categoriesBtn").addEventListener("click", scrollToCategories);
+
   document.addEventListener("click", event => {
     const categoryButton = event.target.closest("[data-category]");
     if (!categoryButton) return;
@@ -63,17 +81,8 @@ export function initSearch(render) {
   });
   document.getElementById("sortSelect").addEventListener("change", render);
 
-  document.getElementById("dealsBtn").addEventListener("click", () => {
-    viewState.category = "All";
-    viewState.dealsOnly = true;
-    viewState.filter = "Deals";
-    viewState.query = "";
-    resetDiscovery();
-    document.getElementById("searchInput").value = "";
-    document.querySelectorAll("[data-filter]").forEach(button => button.classList.toggle("active", button.dataset.filter === "Deals"));
-    render();
-    scrollToProducts();
-  });
+  document.getElementById("dealsBtn").addEventListener("click", () => showDeals(render));
+  document.getElementById("showDealsBtn").addEventListener("click", () => showDeals(render));
 
   document.getElementById("exploreBtn").addEventListener("click", scrollToProducts);
   document.getElementById("savedBtn").addEventListener("click", () => {
@@ -96,3 +105,4 @@ export function initSearch(render) {
     scrollToProducts();
   });
 }
+

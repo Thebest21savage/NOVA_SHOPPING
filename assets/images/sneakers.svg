@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-labelledby="title">
+  <title id="title">Canvas everyday sneakers</title>
+  <rect width="360" height="280" rx="24" fill="#F5F0EA"/>
+  <ellipse cx="183" cy="219" rx="112" ry="13" fill="#E0D8CE"/>
+  <path d="M82 172c14-7 29-18 40-34l14-22 27 8 19 28 36 17 41 5c13 2 24 12 24 25v8H80v-18c0-8 1-14 2-17z" fill="#FDFCF9" stroke="#D7D2CC" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m137 116 26 8 18 27-39-5-19-8z" fill="#C7B5E2"/>
+  <path d="m156 143 18 7m-26 2 21 7m-33-3 20 8" stroke="#82729F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M84 189h216v17c0 7-6 12-13 12H96c-8 0-14-6-14-14z" fill="#75618E"/>
+  <path d="M96 202h193" stroke="#C9BCE0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M210 171c19 1 35 3 50 7" stroke="#D7D2CC" stroke-width="3" stroke-linecap="round"/>
+</svg>
+

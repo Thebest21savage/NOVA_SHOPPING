@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-labelledby="title">
+  <title id="title">Violet wireless headphones</title>
+  <rect width="360" height="280" rx="24" fill="#F0EDF7"/>
+  <ellipse cx="180" cy="228" rx="95" ry="13" fill="#D8D1E3"/>
+  <path d="M103 160v-34a77 77 0 0 1 154 0v34" fill="none" stroke="#4E465E" stroke-width="21" stroke-linecap="round"/>
+  <path d="M119 150v-24a61 61 0 0 1 122 0v24" fill="none" stroke="#8070A7" stroke-width="9" stroke-linecap="round"/>
+  <rect x="87" y="145" width="45" height="74" rx="18" fill="#7461A2"/>
+  <rect x="228" y="145" width="45" height="74" rx="18" fill="#7461A2"/>
+  <rect x="94" y="153" width="31" height="56" rx="13" fill="#CFC5E4"/>
+  <rect x="235" y="153" width="31" height="56" rx="13" fill="#CFC5E4"/>
+  <path d="M99 177h7m148 0h7" stroke="#F7F5FA" stroke-width="3" stroke-linecap="round"/>
+</svg>
+

@@ -1,142 +1,196 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="NOVA Shopping — discover better, shop smarter.">
-<meta name="theme-color" content="#faf8ff">
-<title>NOVA Shopping — Discover better. Shop smarter.</title>
-<link rel="stylesheet" href="./css/main.css">
-<link rel="stylesheet" href="./css/components.css">
-<link rel="stylesheet" href="./css/animations.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find your next favorite thing at NOVA. Discover useful products, compare prices, and shop with clarity.">
+  <meta name="theme-color" content="#ffffff">
+  <title>NOVA Shopping — Find your next favorite thing</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/animations.css">
 </head>
 <body>
-<div class="announcement"><span class="spark">✦</span>Thoughtful finds. Clear choices. A little more NOVA in every day.<span class="spark">✦</span></div>
-<header class="header">
-  <div class="header-shell">
-    <a class="brand" href="#" aria-label="NOVA Shopping home">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/><circle cx="18.7" cy="5.2" r="1.2" fill="currentColor"/><circle cx="5" cy="18.8" r=".9" fill="currentColor"/></svg></span>
-      <span class="brand-word">NOVA<span>✦</span></span>
-    </a>
-    <form class="search" id="searchForm" role="search">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      <input id="searchInput" placeholder="Search products, categories and more..." aria-label="Search products">
-      <button type="submit">Search <span aria-hidden="true">↗</span></button>
-    </form>
-    <div class="head-actions">
-      <button id="accountBtn" type="button" aria-label="Open account"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20c.6-3.6 2.8-5.4 6.5-5.4s5.9 1.8 6.5 5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="label" id="accountLabel">Sign in</span></button>
-      <button id="savedBtn" type="button" aria-label="Show saved items"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 8.9c0 4.4-8.2 10-8.2 10s-8.2-5.6-8.2-10a4.2 4.2 0 0 1 7.6-2.5l.6.8.6-.8a4.2 4.2 0 0 1 7.6 2.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="label">Saved</span></button>
-      <button id="cartBtn" type="button" aria-label="Open cart"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.8 5.5h2l2 10.2h10.8l2-7.4H6.4M9 19.3h.1m8.4 0h.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.3" r="1.2" fill="currentColor"/><circle cx="17.5" cy="19.3" r="1.2" fill="currentColor"/></svg><span class="label">Cart</span><span class="count" id="cartCount">0</span></button>
-    </div>
-  </div>
-</header>
-<div class="nav-wrap"><nav class="nav" aria-label="Shop categories">
-  <button class="active" data-category="All">All discoveries</button>
-  <button data-category="Electronics">Electronics</button>
-  <button data-category="Home">Home & Kitchen</button>
-  <button data-category="Fashion">Fashion</button>
-  <button data-category="Beauty">Beauty</button>
-  <button data-category="Sports">Sports & Outdoors</button>
-  <button data-category="Books">Books</button>
-  <button data-category="Toys">Toys & Games</button>
-  <button id="dealsBtn" class="deals-link">NOVA finds ✦</button>
-</nav></div>
-<main class="wrap">
-  <section class="hero js-reveal" aria-labelledby="heroTitle">
-    <div class="hero-copy">
-      <div class="eyebrow"><span class="eyebrow-star">✦</span> Meet your next good find</div>
-      <h1 id="heroTitle">Discover better.<br><em>Shop smarter.</em></h1>
-      <p>Less scrolling, more “that’s exactly what I wanted.” Follow your curiosity to thoughtful finds, clear choices, and little moments of NOVA.</p>
-      <div class="hero-actions">
-        <button class="primary-button" id="exploreBtn">Explore the collection <span class="button-arrow" aria-hidden="true">→</span></button>
-        <button class="secondary-button" type="button" data-open-tools="ai"><span aria-hidden="true">✦</span> Find my kind of thing</button>
+  <div class="announcement"><span aria-hidden="true">✦</span> A better place to find the things you’ll love <span aria-hidden="true">✦</span></div>
+
+  <header class="header" id="top">
+    <div class="header-shell">
+      <a class="brand" href="#top" aria-label="NOVA Shopping home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/><circle cx="18.7" cy="5.2" r="1.2" fill="currentColor"/></svg></span>
+        <span class="brand-word">NOVA<span>✦</span></span>
+      </a>
+      <button class="categories-button" id="categoriesBtn" type="button" aria-label="Browse categories"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Categories</span></button>
+      <form class="search" id="searchForm" role="search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="searchInput" placeholder="Search products, ideas, and more" aria-label="Search products">
+        <button type="submit">Search</button>
+      </form>
+      <button class="nova-ai-link" id="novaAiHeader" data-open-tools="ai" type="button"><span class="ai-spark" aria-hidden="true">✦</span><span>NOVA AI</span></button>
+      <div class="head-actions">
+        <button id="ordersNavBtn" type="button" aria-label="View orders"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16l-3.5-2-3.5 2-3.5-2L5 20V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9h7m-7 4h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="label">Orders</span></button>
+        <button id="accountBtn" type="button" aria-label="Open profile"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20c.6-3.6 2.8-5.4 6.5-5.4s5.9 1.8 6.5 5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="label" id="accountLabel">Profile</span></button>
+        <button id="savedBtn" type="button" aria-label="Show saved items"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 8.9c0 4.4-8.2 10-8.2 10s-8.2-5.6-8.2-10a4.2 4.2 0 0 1 7.6-2.5l.6.8.6-.8a4.2 4.2 0 0 1 7.6 2.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="label">Saved</span></button>
+        <button id="cartBtn" type="button" aria-label="Open cart"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.8 5.5h2l2 10.2h10.8l2-7.4H6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.3" r="1.2" fill="currentColor"/><circle cx="17.5" cy="19.3" r="1.2" fill="currentColor"/></svg><span class="label">Cart</span><span class="count" id="cartCount">0</span></button>
       </div>
-      <div class="hero-note"><span class="note-dot"></span> A calmer way to find something you’ll love.</div>
     </div>
-    <div class="hero-stage" aria-label="A visual map of product discoveries">
-      <div class="stage-glow"></div><div class="stage-orbit"></div><div class="stage-orbit orbit-two"></div>
-      <div class="hero-core" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/></svg></div>
-      <div class="float-card card-top"><span class="float-emoji">🎧</span><span><b>Made for your mood</b><small>Curated with a little care</small></span></div>
-      <div class="float-card card-bottom"><span class="float-emoji">🪴</span><span><b>A fresh discovery</b><small>Good things, closer together</small></span></div>
-      <div class="float-card card-side"><span class="float-emoji">✨</span><span><b>NOVA pick</b><small>One to look at twice</small></span></div>
-      <div class="stage-caption">Your next find is out there</div>
-    </div>
-  </section>
-  <div class="signal-row js-reveal" aria-label="NOVA shopping values">
-    <div class="signal"><span class="signal-icon">✧</span><span><b>Thoughtful discovery</b><small>Find something new to love</small></span></div>
-    <div class="signal"><span class="signal-icon">↗</span><span><b>Clear comparisons</b><small>Choose with confidence</small></span></div>
-    <div class="signal"><span class="signal-icon">♡</span><span><b>Made to be shared</b><small>Keep your people in the loop</small></span></div>
+  </header>
+
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Shop categories">
+      <button class="active" data-category="All" type="button">All</button>
+      <button data-category="Electronics" type="button">Tech</button>
+      <button data-category="Fashion" type="button">Fashion</button>
+      <button data-category="Home" type="button">Home</button>
+      <button data-category="Beauty" type="button">Beauty</button>
+      <button data-category="Toys" type="button">Gaming & toys</button>
+      <button data-category="Sports" type="button">Sports</button>
+      <button data-category="Books" type="button">Books</button>
+      <button id="dealsBtn" class="deals-link" type="button">Deals worth seeing</button>
+    </nav>
   </div>
-  <section class="categories-section js-reveal" aria-labelledby="categoriesTitle">
-    <div class="section-head"><div><p class="section-kicker">Start anywhere</p><h2 id="categoriesTitle">What are you in the mood for?</h2><p>Little paths into a world of good finds.</p></div></div>
-    <div class="categories" id="categories"></div>
-  </section>
-  <section class="products-section js-reveal" id="productsSection" aria-labelledby="productHeading">
-    <div class="section-head">
-      <div><p class="section-kicker">The NOVA edit</p><h2 id="productHeading">Trending right now</h2><p id="productSub">A few things worth a closer look.</p></div>
-      <div class="section-heading-right"><span>Small collection, fresh possibilities</span><span class="result-pill" id="resultCount">12 discoveries</span></div>
-    </div>
-    <div class="toolbar" aria-label="Filter and sort products">
-      <button class="chip active" data-filter="All">All picks</button><button class="chip" data-filter="Popular">Popular</button><button class="chip" data-filter="New">New arrivals</button><button class="chip" data-filter="Deals">Price opportunities</button>
-      <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="rating">Top rated</option></select>
-      <div class="compare-shortcut"><span id="compareStatus">0 of 3 selected</span><button class="chip" id="compareSelectionBtn" type="button" disabled>Compare selected</button></div>
-    </div>
-    <div class="grid" id="productGrid"></div>
-  </section>
-  <section class="discovery-moment js-reveal" aria-labelledby="momentTitle">
-    <div class="moment-copy">
-      <p class="section-kicker">A little more you, in every search</p>
-      <h2 id="momentTitle">Good discovery has a way of finding you.</h2>
-      <p>Tell NOVA what matters today — a budget, a mood, or the thing you’re trying to solve. Your local shopping guide can surface a few thoughtful starting points.</p>
-      <button class="primary-button" type="button" data-open-tools="ai">Meet NOVA AI <span class="button-arrow" aria-hidden="true">→</span></button>
-    </div>
-    <div class="discovery-map" aria-label="Products connected by a path of discovery">
-      <div class="map-line"></div><div class="map-center" aria-hidden="true">✦</div>
-      <div class="map-node node-one"><span>🎧</span><div><b>Your everyday</b><small>Comfortable picks</small></div></div>
-      <div class="map-node node-two"><span>🪴</span><div><b>Your space</b><small>Fresh little details</small></div></div>
-      <div class="map-node node-three"><span>📚</span><div><b>Your next idea</b><small>Something to explore</small></div></div>
-    </div>
-  </section>
-  <section class="social-moment js-reveal" aria-labelledby="socialTitle">
-    <div class="friend-stack" aria-hidden="true"><span class="friend-avatar">🙂</span><span class="friend-avatar">😊</span><span class="friend-avatar">😎</span><span class="friend-avatar">✦</span></div>
-    <div class="social-copy"><p class="section-kicker">Good finds travel</p><h2 id="socialTitle">Shopping is more fun together.</h2><p>Keep a shortlist, swap ideas, and make the next choice with your people.</p></div>
-    <button class="secondary-button" type="button" data-open-tools="lists">Explore Social Shopping <span class="button-arrow" aria-hidden="true">→</span></button>
-  </section>
-</main>
-<footer class="footer"><div class="footer-inner">
-  <div class="footer-copy"><a class="brand" href="#" aria-label="NOVA Shopping home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/></svg></span><span class="brand-word">NOVA<span>✦</span></span></a><p>Discover better. Shop smarter.</p></div>
-  <div class="footer-meta"><b>Shopping, with a little more imagination.</b><p>Thoughtful discovery · Clear choices · Customer-first design</p><p>© 2026 NOVA Shopping · Independent demo storefront</p></div>
-</div></footer>
 
-<button class="tools-tab" id="toolsTab" type="button" aria-controls="toolsOverlay" aria-expanded="false"><span class="tab-star" aria-hidden="true">✦</span> NOVA Tools</button>
-<button class="mobile-tools" id="mobileTools" type="button" aria-controls="toolsOverlay" aria-expanded="false"><span class="tab-star" aria-hidden="true">✦</span> Explore NOVA</button>
-<div class="tools-overlay" id="toolsOverlay" aria-hidden="true">
-  <aside class="tools-panel" role="dialog" aria-modal="true" aria-labelledby="toolsTitle">
-    <div class="tools-head">
-      <div class="tools-head-copy"><p class="section-kicker">A little NOVA magic</p><h2 id="toolsTitle">Explore NOVA</h2><p>Open a tool to see how it can make your next choice feel easier.</p></div>
-      <button class="close" id="closeTools" type="button" aria-label="Close NOVA Tools">✕</button>
-    </div>
-    <div class="tools-list" id="toolsList">
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="ai" aria-expanded="false" aria-controls="tool-ai"><span class="tool-icon">🤖</span><span class="tool-label"><b>NOVA AI</b><small>Personalized ideas for you</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-ai" aria-hidden="true"><div class="tool-panel-inner"><p>Find a few products based on what you need and the budget you have in mind. The current guide uses NOVA’s sample catalog.</p><button class="tool-cta" id="aiBtn" type="button">Find products for my budget</button></div></div></div>
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="compare" aria-expanded="false" aria-controls="tool-compare"><span class="tool-icon">⚖️</span><span class="tool-label"><b>Compare</b><small>See your shortlist side by side</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-compare" aria-hidden="true"><div class="tool-panel-inner"><p>Choose up to three products with the balance icon on each card, then compare price, rating, catalog highlights, delivery, and value context.</p><button class="tool-cta" id="compareBtn" type="button">Compare selected products</button></div></div></div>
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="price" aria-expanded="false" aria-controls="tool-price"><span class="tool-icon">📉</span><span class="tool-label"><b>Price Watch</b><small>Keep an eye on a better price</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-price" aria-hidden="true"><div class="tool-panel-inner"><p>Save a product first, then choose the price you’d like to watch for. Database storage needs Supabase; automatic drop notifications need a monitoring service.</p><button class="tool-cta" id="priceWatchBtn" type="button">Set a target price</button></div></div></div>
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="rewards" aria-expanded="false" aria-controls="tool-rewards"><span class="tool-icon">🎁</span><span class="tool-label"><b>NOVA Rewards</b><small>Your shopping benefits</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-rewards" aria-hidden="true"><div class="tool-panel-inner"><p>See points already recorded to your account. Reward earning and redemption are not active in this storefront yet.</p><button class="tool-cta" id="rewardsBtn" type="button">View my rewards</button></div></div></div>
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="lists" aria-expanded="false" aria-controls="tool-lists"><span class="tool-icon">👥</span><span class="tool-label"><b>Social Shopping</b><small>Plan a find with your people</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-lists" aria-hidden="true"><div class="tool-panel-inner"><p>Shared lists and group voting are part of NOVA’s roadmap. Sign in to keep your saved products and account ready for those tools.</p><button class="tool-cta" id="listsBtn" type="button">Open Social Shopping</button></div></div></div>
-      <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="seller" aria-expanded="false" aria-controls="tool-seller"><span class="tool-icon">🏪</span><span class="tool-label"><b>Sell on NOVA</b><small>Bring your shop to NOVA</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-seller" aria-hidden="true"><div class="tool-panel-inner"><p>Learn about seller applications and check an application already linked to your account. Storefronts and payouts are not enabled yet.</p><button class="tool-cta" id="sellerBtn" type="button">Seller information</button></div></div></div>
-    </div>
-    <p class="tools-footnote">Some tools use NOVA’s current sample catalog. Features that need a connected service will say so before you rely on them.</p>
-  </aside>
-</div>
+  <main class="page-shell">
+    <section class="hero js-reveal" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true">✦</span> SHOP A LITTLE CLOSER TO YOU</p>
+        <h1 id="heroTitle">Find your next<br><span>favorite thing.</span></h1>
+        <p class="hero-description">Discover trending finds, compare what matters, and bring home something you’ll use every day.</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="exploreBtn" type="button">Shop trending now <span aria-hidden="true">→</span></button>
+          <button class="text-button" type="button" data-open-tools="ai">Get a recommendation <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="hero-proof"><span class="proof-mark" aria-hidden="true">✓</span> Clear prices. Considered picks. A more useful way to shop.</div>
+      </div>
+      <div class="hero-visual">
+        <img src="./assets/images/hero-studio.svg" alt="A studio arrangement of NOVA headphones, a table lamp, a speaker, and a plant" fetchpriority="high">
+        <div class="hero-caption"><span>THE NOVA EDIT</span><span>Good things, found together.</span></div>
+      </div>
+    </section>
 
-<div class="overlay" id="cartOverlay" aria-hidden="true"><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="drawer-head"><h2 id="cartTitle">Your cart</h2><button class="close" id="closeCart" type="button" aria-label="Close cart">✕</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="cartTotal">$0.00</span></div><p class="checkout-note">Secure Stripe-hosted checkout. Payments activate after backend setup.</p><button class="checkout" id="checkoutBtn" type="button">Continue to secure checkout →</button></aside></div>
-<div class="modal" id="accountModal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="drawer-head"><h2 id="authTitle">Welcome to NOVA</h2><button class="close" id="closeAccount" type="button" aria-label="Close account">✕</button></div><p id="authMessage">Sign in or create your NOVA customer account.</p><label>Email address<input type="email" id="emailInput" autocomplete="email" placeholder="you@example.com"></label><label>Password<input type="password" id="passwordInput" autocomplete="current-password" minlength="8" placeholder="At least 8 characters"></label><button class="checkout" id="signInBtn" type="button">Sign in</button><button class="chip" id="signUpBtn" type="button">Create account</button><button class="chip" id="signOutBtn" type="button">Sign out</button><div id="accountDetails" class="account-details"></div></div></div>
-<div class="modal" id="compareModal" aria-hidden="true"><div class="modal-card compare-modal-card" role="dialog" aria-modal="true" aria-labelledby="compareTitle"><div class="drawer-head"><h2 id="compareTitle">Compare your shortlist</h2><button class="close" id="closeCompare" type="button" aria-label="Close comparison">✕</button></div><div id="compareBody"></div></div></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <section class="benefit-strip js-reveal" aria-label="Shopping with NOVA">
+      <div><span class="benefit-icon" aria-hidden="true">↗</span><span><b>Discover with purpose</b><small>Start with what you need</small></span></div>
+      <div><span class="benefit-icon" aria-hidden="true">≋</span><span><b>Compare with clarity</b><small>See the details side by side</small></span></div>
+      <div><span class="benefit-icon" aria-hidden="true">♡</span><span><b>Keep the good finds</b><small>Save what you want to revisit</small></span></div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- Optional local settings: copy config.example.js to config.js; config.js is ignored by Git. -->
-<script src="./config.js"></script>
-<script type="module" src="./js/app.js"></script>
+    <section class="products-section js-reveal" id="productsSection" aria-labelledby="productHeading">
+      <div class="section-head">
+        <div><p class="section-kicker">THE NOVA EDIT</p><h2 id="productHeading">Trending on NOVA</h2><p id="productSub">Popular picks from the NOVA sample catalog.</p></div>
+        <div class="section-heading-right"><span>Fresh finds to explore</span><span class="result-pill" id="resultCount">12 discoveries</span></div>
+      </div>
+      <div class="toolbar" aria-label="Filter and sort products">
+        <button class="chip active" data-filter="All" type="button">All picks</button><button class="chip" data-filter="Popular" type="button">Popular</button><button class="chip" data-filter="New" type="button">New arrivals</button><button class="chip" data-filter="Deals" type="button">Price opportunities</button>
+        <select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="rating">Top rated</option></select>
+        <div class="compare-shortcut"><span id="compareStatus">0 of 3 selected</span><button class="chip" id="compareSelectionBtn" type="button" disabled>Compare selected</button></div>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section class="picked-section js-reveal" id="pickedForYou" aria-labelledby="pickedTitle">
+      <div class="picked-copy">
+        <p class="section-kicker">A GOOD PLACE TO BEGIN</p>
+        <h2 id="pickedTitle">Picked for you.<br>Ready when you are.</h2>
+        <p>Explore a few favorites from the sample catalog. NOVA AI can narrow the list by your budget, without asking for a taste profile.</p>
+        <button class="secondary-button" type="button" data-open-tools="ai">Build a shortlist <span aria-hidden="true">→</span></button>
+        <small class="sample-note">Suggestions use the local demo catalog.</small>
+      </div>
+      <div class="picked-gallery" aria-label="A few sample catalog picks">
+        <button class="picked-item picked-item-large" type="button" data-category="Electronics"><img src="./assets/images/headphones.svg" alt="" loading="lazy"><span><b>For your everyday</b><small>Audio worth a closer look</small></span></button>
+        <button class="picked-item" type="button" data-category="Home"><img src="./assets/images/lamp.svg" alt="" loading="lazy"><span><b>For your space</b><small>Small details, big mood</small></span></button>
+        <button class="picked-item" type="button" data-category="Books"><img src="./assets/images/book.svg" alt="" loading="lazy"><span><b>For a new idea</b><small>Something to take with you</small></span></button>
+      </div>
+    </section>
+
+    <section class="comparison-section js-reveal" id="smartComparison" aria-labelledby="comparisonTitle">
+      <div class="comparison-copy">
+        <p class="section-kicker">THE NOVA DIFFERENCE</p>
+        <h2 id="comparisonTitle">Shop smarter.<br>Know what you’re paying for.</h2>
+        <p>Price is only part of the story. NOVA comparison brings delivery, prior prices, and useful product details into one clear view.</p>
+        <button class="primary-button" type="button" data-open-tools="compare">Compare your shortlist <span aria-hidden="true">→</span></button>
+        <p class="sample-note">The example uses illustrative values. Live seller offers and price history are not connected yet.</p>
+      </div>
+      <div class="comparison-example">
+        <div class="example-topline"><span>EXAMPLE COMPARISON</span><span class="example-badge">SAMPLE DATA</span></div>
+        <div class="example-product"><img src="./assets/images/headphones.svg" alt="" loading="lazy"><span><b>Wireless Noise-Canceling Headphones</b><small>Electronics · sample catalog</small></span></div>
+        <div class="example-offer best-value"><div class="offer-source"><span class="best-dot">✓</span><span><b>NOVA sample offer</b><small>Delivery included · 3–5 days</small></span></div><div class="offer-total"><strong>$89.99</strong><small>Est. total before tax</small></div><span class="best-label">BEST VALUE</span></div>
+        <div class="example-offer"><div class="offer-source"><span class="source-mark">2</span><span><b>Example source</b><small>$4.95 delivery · 5–7 days</small></span></div><div class="offer-total"><strong>$96.44</strong><small>Est. total before tax</small></div></div>
+        <div class="price-history"><div><b>Price history</b><small>Illustrative 30-day trend</small></div><svg viewBox="0 0 210 54" role="img" aria-label="Illustrative price trend moving from 109 dollars to 89 dollars"><path d="M3 44 32 37 58 40 84 23 110 28 139 18 162 25 184 11 207 15" fill="none" stroke="#7358BE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 44 32 37 58 40 84 23 110 28 139 18 162 25 184 11 207 15v35H3z" fill="#EEE9F8"/><circle cx="207" cy="15" r="4" fill="#7358BE"/></svg><span class="history-range">$109 <span>→</span> $89</span></div>
+      </div>
+    </section>
+
+    <section class="discovery-section js-reveal" id="productDiscovery" aria-labelledby="discoveryTitle">
+      <div class="section-head"><div><p class="section-kicker">LOOK A LITTLE CLOSER</p><h2 id="discoveryTitle">See it before you buy it.</h2><p>Product spotlights bring the details into focus.</p></div><span class="coming-label">VISUAL PREVIEWS · SAMPLE CATALOG</span></div>
+      <div class="discovery-grid">
+        <article class="discovery-card discovery-featured"><img src="./assets/images/sneakers.svg" alt="Canvas everyday sneakers shown in a clean studio illustration" loading="lazy"><div class="discovery-overlay"><span>ON THE MOVE</span><h3>Everyday, made a little better.</h3><button type="button" data-category="Fashion">Explore fashion <span aria-hidden="true">→</span></button></div></article>
+        <article class="discovery-card"><img src="./assets/images/skincare.svg" alt="A daily skincare set in a clean studio illustration" loading="lazy"><div class="discovery-caption"><span>DAILY RITUALS</span><h3>Make room for a little care.</h3><button type="button" data-category="Beauty">Explore beauty <span aria-hidden="true">→</span></button></div></article>
+        <article class="discovery-card"><img src="./assets/images/robot-kit.svg" alt="A creative build-it robot kit in a clean studio illustration" loading="lazy"><div class="discovery-caption"><span>PLAY & MAKE</span><h3>Good ideas start somewhere.</h3><button type="button" data-category="Toys">Explore gaming & toys <span aria-hidden="true">→</span></button></div></article>
+      </div>
+      <p class="sample-note discovery-note">Product video and customer demo uploads are not connected in this version; these are original sample illustrations.</p>
+    </section>
+
+    <section class="categories-section js-reveal" id="categoriesSection" aria-labelledby="categoriesTitle">
+      <div class="section-head"><div><p class="section-kicker">FIND YOUR WAY IN</p><h2 id="categoriesTitle">Shop by what you’re into.</h2><p>Pick a category and keep exploring.</p></div></div>
+      <div class="categories" id="categories"></div>
+    </section>
+
+    <section class="trust-section js-reveal" id="trustSection" aria-labelledby="trustTitle">
+      <div class="trust-intro"><p class="section-kicker">THE DETAILS MATTER</p><h2 id="trustTitle">A little more clarity,<br>at every step.</h2><p>NOVA keeps useful details close, from comparing prices to revisiting the things you’ve saved.</p></div>
+      <div class="trust-points">
+        <div class="trust-point"><span>01</span><div><b>Transparent prices</b><small>Compare the shown price with listed prior prices and delivery.</small></div></div>
+        <div class="trust-point"><span>02</span><div><b>Secure checkout</b><small>Stripe-hosted checkout is available when the payment service is configured.</small></div></div>
+        <div class="trust-point"><span>03</span><div><b>Your orders, together</b><small>Connected accounts can view their order history in one place.</small></div></div>
+        <div class="trust-point"><span>04</span><div><b>Keep what you love</b><small>Saved products and your cart stay ready for your next visit.</small></div></div>
+      </div>
+      <p class="trust-note">Catalog ratings are sample data. Verified-purchase reviews, returns policies, and live shipment tracking require additional store setup.</p>
+    </section>
+
+    <section class="deals-section js-reveal" id="dealsSection" aria-labelledby="dealsTitle">
+      <div class="section-head"><div><p class="section-kicker">A FEW GOOD FINDS FOR LESS</p><h2 id="dealsTitle">Deals worth seeing.</h2><p>Handpicked price opportunities from the sample catalog.</p></div><button class="text-button" id="showDealsBtn" type="button">See all deals <span aria-hidden="true">→</span></button></div>
+      <div class="deal-grid">
+        <article class="deal-card"><div class="deal-art"><span class="deal-tag">25% below listed price</span><img src="./assets/images/sneakers.svg" alt="Canvas everyday sneakers" loading="lazy"></div><div class="deal-info"><span class="deal-category">FASHION</span><h3>Everyday Canvas Sneakers</h3><div><strong>$54.00</strong><del>$72.00</del></div><button class="add" data-add="3" type="button">Add to cart</button></div></article>
+        <article class="deal-card"><div class="deal-art"><span class="deal-tag">Popular price pick</span><img src="./assets/images/speaker.svg" alt="Portable Bluetooth speaker" loading="lazy"></div><div class="deal-info"><span class="deal-category">TECH</span><h3>Portable Bluetooth Speaker</h3><div><strong>$34.99</strong><del>$49.99</del></div><button class="add" data-add="11" type="button">Add to cart</button></div></article>
+        <article class="deal-card"><div class="deal-art"><span class="deal-tag">A NOVA favorite</span><img src="./assets/images/watch.svg" alt="Smart fitness watch" loading="lazy"></div><div class="deal-info"><span class="deal-category">TECH</span><h3>Smart Fitness Watch</h3><div><strong>$119.00</strong><del>$149.00</del></div><button class="add" data-add="5" type="button">Add to cart</button></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="aboutNova">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand" href="#top" aria-label="NOVA Shopping home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/></svg></span><span class="brand-word">NOVA<span>✦</span></span></a><p>Find your next favorite thing.</p></div>
+      <div class="footer-column"><h2>Shop</h2><a href="#productsSection">Trending</a><a href="#categoriesSection">Categories</a><a href="#dealsSection">Curated deals</a></div>
+      <div class="footer-column"><h2>NOVA</h2><a href="#smartComparison">Smart comparison</a><button type="button" data-open-tools="ai">NOVA AI</button><a href="#productDiscovery">Product previews</a></div>
+      <div class="footer-column"><h2>Help</h2><a href="#trustSection">Shopping with clarity</a><button type="button" id="ordersFooterBtn">Order history</button><button type="button" data-open-tools="seller">Sell on NOVA</button></div>
+      <div class="footer-column"><h2>Community</h2><button type="button" data-open-tools="lists">Social Shopping</button><button type="button" data-open-tools="rewards">NOVA Rewards</button><a href="#aboutNova">About NOVA</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 NOVA Shopping · Independent demo storefront</span><span>Thoughtful discovery. Clear choices.</span></div>
+  </footer>
+
+  <button class="tools-tab" id="toolsTab" type="button" aria-controls="toolsOverlay" aria-expanded="false"><span class="tab-star" aria-hidden="true">✦</span> NOVA Tools</button>
+  <button class="mobile-tools" id="mobileTools" type="button" aria-controls="toolsOverlay" aria-expanded="false"><span class="tab-star" aria-hidden="true">✦</span> Explore NOVA</button>
+  <div class="tools-overlay" id="toolsOverlay" aria-hidden="true">
+    <aside class="tools-panel" role="dialog" aria-modal="true" aria-labelledby="toolsTitle">
+      <div class="tools-head"><div class="tools-head-copy"><p class="section-kicker">YOUR SHOPPING SHORTCUTS</p><h2 id="toolsTitle">Explore NOVA</h2><p>Open a tool to make your next choice feel easier.</p></div><button class="close" id="closeTools" type="button" aria-label="Close NOVA Tools">✕</button></div>
+      <div class="tools-list" id="toolsList">
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="ai" aria-expanded="false" aria-controls="tool-ai"><span class="tool-icon">✦</span><span class="tool-label"><b>NOVA AI</b><small>Personalized ideas for you</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-ai" aria-hidden="true"><div class="tool-panel-inner"><p>Find products based on what you need and the budget you have in mind. The current guide uses NOVA’s sample catalog.</p><button class="tool-cta" id="aiBtn" type="button">Find products for my budget</button></div></div></div>
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="compare" aria-expanded="false" aria-controls="tool-compare"><span class="tool-icon">≋</span><span class="tool-label"><b>Compare</b><small>See your shortlist side by side</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-compare" aria-hidden="true"><div class="tool-panel-inner"><p>Choose up to three products with the balance icon on each card, then compare price, rating, catalog highlights, delivery, and value context.</p><button class="tool-cta" id="compareBtn" type="button">Compare selected products</button></div></div></div>
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="price" aria-expanded="false" aria-controls="tool-price"><span class="tool-icon">↓</span><span class="tool-label"><b>Price Watch</b><small>Keep an eye on a better price</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-price" aria-hidden="true"><div class="tool-panel-inner"><p>Save a product first, then choose a target price. Automatic drop notifications need a separate monitoring service.</p><button class="tool-cta" id="priceWatchBtn" type="button">Set a target price</button></div></div></div>
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="rewards" aria-expanded="false" aria-controls="tool-rewards"><span class="tool-icon">✧</span><span class="tool-label"><b>NOVA Rewards</b><small>Your shopping benefits</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-rewards" aria-hidden="true"><div class="tool-panel-inner"><p>See points already recorded to your account. Reward earning and redemption are not active yet.</p><button class="tool-cta" id="rewardsBtn" type="button">View my rewards</button></div></div></div>
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="lists" aria-expanded="false" aria-controls="tool-lists"><span class="tool-icon">◎</span><span class="tool-label"><b>Social Shopping</b><small>Plan a find with your people</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-lists" aria-hidden="true"><div class="tool-panel-inner"><p>Shared lists and group voting are part of NOVA’s roadmap. Your saved items are ready to revisit.</p><button class="tool-cta" id="listsBtn" type="button">Open Social Shopping</button></div></div></div>
+        <div class="tool-item"><button class="tool-trigger" type="button" data-tool-toggle="seller" aria-expanded="false" aria-controls="tool-seller"><span class="tool-icon">↗</span><span class="tool-label"><b>Sell on NOVA</b><small>Bring your shop to NOVA</small></span><span class="tool-chevron" aria-hidden="true">⌄</span></button><div class="tool-panel" id="tool-seller" aria-hidden="true"><div class="tool-panel-inner"><p>Check a seller application linked to your account. Storefronts and payouts are not enabled yet.</p><button class="tool-cta" id="sellerBtn" type="button">Seller information</button></div></div></div>
+      </div>
+      <p class="tools-footnote">Some tools use NOVA’s sample catalog. We’ll identify features that need a connected service.</p>
+    </aside>
+  </div>
+
+  <div class="overlay" id="cartOverlay" aria-hidden="true"><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="drawer-head"><h2 id="cartTitle">Your cart</h2><button class="close" id="closeCart" type="button" aria-label="Close cart">✕</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="cartTotal">$0.00</span></div><p class="checkout-note">Secure Stripe-hosted checkout. Payments activate after backend setup.</p><button class="checkout" id="checkoutBtn" type="button">Continue to secure checkout →</button></aside></div>
+  <div class="modal" id="accountModal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="drawer-head"><h2 id="authTitle">Welcome to NOVA</h2><button class="close" id="closeAccount" type="button" aria-label="Close account">✕</button></div><p id="authMessage">Sign in or create your NOVA customer account.</p><label>Email address<input type="email" id="emailInput" autocomplete="email" placeholder="you@example.com"></label><label>Password<input type="password" id="passwordInput" autocomplete="current-password" minlength="8" placeholder="At least 8 characters"></label><button class="checkout" id="signInBtn" type="button">Sign in</button><button class="chip" id="signUpBtn" type="button">Create account</button><button class="chip" id="signOutBtn" type="button">Sign out</button><div id="accountDetails" class="account-details"></div></div></div>
+  <div class="modal" id="compareModal" aria-hidden="true"><div class="modal-card compare-modal-card" role="dialog" aria-modal="true" aria-labelledby="compareTitle"><div class="drawer-head"><h2 id="compareTitle">Compare your shortlist</h2><button class="close" id="closeCompare" type="button" aria-label="Close comparison">✕</button></div><div id="compareBody"></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Optional local settings: copy config.example.js to config.js; config.js is ignored by Git. -->
+  <script src="./config.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
 

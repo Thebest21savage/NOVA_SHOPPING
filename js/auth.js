@@ -22,15 +22,36 @@ async function refreshAuth() {
   document.getElementById("accountDetails").innerHTML = currentUser ? '<p>Customer account active.</p><button class="chip" id="ordersBtn" type="button">View my orders</button>' : "";
 }
 
+function openAccount() {
+  document.getElementById("accountModal").classList.add("open");
+  document.getElementById("accountModal").setAttribute("aria-hidden","false");
+}
+
+async function loadOrders(notify) {
+  if (!supabase) {
+    openAccount();
+    notify("Connect Supabase to view account order history.");
+    return;
+  }
+  if (!currentUser) {
+    openAccount();
+    notify("Sign in to view your order history.");
+    return;
+  }
+  openAccount();
+  const {data,error} = await supabase.from("orders").select("id,status,total_cents,created_at").order("created_at",{ascending:false}).limit(20);
+  if (error) { notify("Order history will appear after the database migration is installed"); return; }
+  document.getElementById("accountDetails").innerHTML = "<h3>Recent orders</h3>" + (data.length ? data.map(order => "<p>Order " + order.id.slice(0,8) + " · " + order.status + " · " + money(order.total_cents / 100) + "</p>").join("") : "<p>No orders yet.</p>");
+}
+
 export function initAuth(notify) {
   if (window.NOVA_CONFIG?.supabaseUrl && window.NOVA_CONFIG?.supabaseAnonKey && window.supabase?.createClient) {
     supabase = window.supabase.createClient(window.NOVA_CONFIG.supabaseUrl, window.NOVA_CONFIG.supabaseAnonKey);
   }
 
-  document.getElementById("accountBtn").addEventListener("click", () => {
-    document.getElementById("accountModal").classList.add("open");
-    document.getElementById("accountModal").setAttribute("aria-hidden","false");
-  });
+  document.getElementById("accountBtn").addEventListener("click", openAccount);
+  document.getElementById("ordersNavBtn").addEventListener("click", () => loadOrders(notify));
+  document.getElementById("ordersFooterBtn").addEventListener("click", () => loadOrders(notify));
   const closeAccount = () => {
     document.getElementById("accountModal").classList.remove("open");
     document.getElementById("accountModal").setAttribute("aria-hidden","true");
@@ -70,9 +91,7 @@ export function initAuth(notify) {
 
   document.getElementById("accountDetails").addEventListener("click", async event => {
     if (event.target.id !== "ordersBtn" || !supabase) return;
-    const {data,error} = await supabase.from("orders").select("id,status,total_cents,created_at").order("created_at",{ascending:false}).limit(20);
-    if (error) { notify("Order history will appear after the database migration is installed"); return; }
-    document.getElementById("accountDetails").innerHTML = "<h3>Recent orders</h3>" + (data.length ? data.map(order => "<p>Order " + order.id.slice(0,8) + " · " + order.status + " · " + money(order.total_cents / 100) + "</p>").join("") : "<p>No orders yet.</p>");
+    await loadOrders(notify);
   });
 
   if (supabase) {
@@ -82,3 +101,4 @@ export function initAuth(notify) {
     refreshAuth();
   }
 }
+

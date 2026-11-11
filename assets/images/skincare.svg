@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-labelledby="title">
+  <title id="title">Daily hydrating skin care set</title>
+  <rect width="360" height="280" rx="24" fill="#F7EFF1"/>
+  <ellipse cx="184" cy="228" rx="95" ry="12" fill="#E6D7DD"/>
+  <rect x="87" y="114" width="58" height="101" rx="14" fill="#E1C8C8"/>
+  <rect x="99" y="96" width="34" height="20" rx="5" fill="#806A7F"/>
+  <rect x="159" y="83" width="62" height="132" rx="15" fill="#F6F2EF" stroke="#DED4D6" stroke-width="3"/>
+  <rect x="174" y="67" width="32" height="19" rx="5" fill="#8C7894"/>
+  <rect x="235" y="125" width="47" height="90" rx="12" fill="#D9D2E8"/>
+  <rect x="247" y="108" width="23" height="19" rx="5" fill="#746282"/>
+  <path d="M100 151h32m44-20h31m-64 44h31m63-8h23" stroke="#B69BA7" stroke-width="3" stroke-linecap="round"/>
+  <path d="M181 163h19" stroke="#85758D" stroke-width="4" stroke-linecap="round"/>
+</svg>
+

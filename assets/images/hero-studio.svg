@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title">
+  <title id="title">A still-life of headphones, a table lamp and a speaker</title>
+  <rect width="720" height="500" rx="32" fill="#F2F0F7"/>
+  <circle cx="528" cy="133" r="104" fill="#E4DEEF"/>
+  <path d="M0 363h720v137H0z" fill="#E9E5EE"/>
+  <path d="M0 363h720" stroke="#DAD5E2" stroke-width="2"/>
+  <ellipse cx="372" cy="399" rx="210" ry="21" fill="#D5D0DD"/>
+
+  <path d="M500 167h19v119h-19z" fill="#8A7A9E"/>
+  <path d="M468 290c0-13 17-22 42-22s42 9 42 22v21c0 16-18 26-42 26s-42-10-42-26z" fill="#B7A7C8"/>
+  <ellipse cx="510" cy="334" rx="53" ry="10" fill="#756587"/>
+  <path d="m438 159 25-60h95l25 60-22 18H460z" fill="#C9B99B"/>
+  <path d="m447 157 22-47h83l21 47z" fill="#E9DFC9"/>
+
+  <path d="M187 277v-62a93 93 0 0 1 186 0v62" fill="none" stroke="#4B4655" stroke-width="27" stroke-linecap="round"/>
+  <path d="M205 260v-42a75 75 0 0 1 150 0v42" fill="none" stroke="#8575A4" stroke-width="10" stroke-linecap="round"/>
+  <rect x="155" y="257" width="62" height="100" rx="23" fill="#75628E"/>
+  <rect x="343" y="257" width="62" height="100" rx="23" fill="#75628E"/>
+  <rect x="165" y="269" width="42" height="76" rx="17" fill="#CEC3DB"/>
+  <rect x="353" y="269" width="42" height="76" rx="17" fill="#CEC3DB"/>
+
+  <rect x="83" y="313" width="110" height="66" rx="18" fill="#84758F"/>
+  <rect x="94" y="322" width="88" height="48" rx="13" fill="#A899B2"/>
+  <path d="M106 330v32m10-32v32m10-32v32m10-32v32m10-32v32m10-32v32m10-32v32" stroke="#DCD5E1" stroke-width="3" stroke-linecap="round"/>
+
+  <path d="M602 311c-7-34 1-70 28-97m-27 56c-24-13-35-30-38-52m40 29c22-17 37-39 40-65" fill="none" stroke="#778C78" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="581" cy="217" rx="12" ry="25" transform="rotate(-39 581 217)" fill="#9CAF9A"/>
+  <ellipse cx="629" cy="237" rx="13" ry="27" transform="rotate(42 629 237)" fill="#8EA18E"/>
+  <ellipse cx="643" cy="183" rx="11" ry="24" transform="rotate(25 643 183)" fill="#A9B7A5"/>
+  <path d="M568 322h76l-8 42c-2 10-9 16-19 16h-22c-10 0-17-6-19-16z" fill="#B09B80"/>
+  <path d="M568 322h76" stroke="#8C775E" stroke-width="6" stroke-linecap="round"/>
+</svg>
+
