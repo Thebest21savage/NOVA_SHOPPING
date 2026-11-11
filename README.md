@@ -1,37 +1,87 @@
 # NOVA Shopping
+
 **Discover better. Shop smarter.**
 
-NOVA is a marketplace starter with a responsive storefront and an integration-ready foundation for customer accounts and secure payments.
+NOVA is a single-page shopping storefront with product discovery, customer accounts, saved items, a cart, and an integration-ready Supabase and Stripe foundation.
 
-## Included in this release
-- Responsive storefront, category navigation, search, sorting, sale filters, product cards
-- Cart and saved products
-- Supabase customer sign-up, sign-in, session state, sign-out and order-history UI
-- Stripe-hosted Checkout integration through a Supabase Edge Function
-- Server-side product price and inventory validation (client-submitted prices are never trusted)
-- Stripe webhook endpoint scaffold for payment confirmation
-- Supabase SQL schema with row-level security for profiles, products, sellers, addresses, orders, reviews, price alerts, rewards, shared shopping lists and price history
-- Initial comparison, budget-based product discovery, rewards, seller, price-watch and social-list UI entry points
+## Project structure
 
-## Run the static storefront
-Open `index.html` in a browser or serve the repository with a local web server. Copy `config.example.js` to `config.js` and set the Supabase project URL and anon key. The anon key is intended for browser use; never place a service-role key or Stripe secret in frontend files.
+```text
+NOVA_SHOPPING/
+├── index.html
+├── css/
+│   ├── main.css          # Design tokens, base styles, header, hero, page layout
+│   ├── components.css    # Product cards, categories, tools, dialogs, responsive rules
+│   └── animations.css    # Motion, ambient effects, reduced-motion support
+├── js/
+│   ├── products.js       # Sample catalog, categories, product and comparison rendering
+│   ├── cart.js           # Cart and saved-item state, local storage, cart drawer
+│   ├── search.js         # Search, categories, filters, sorting, discovery state
+│   ├── auth.js           # Supabase sign-in, sign-up, sign-out, and order history
+│   └── app.js            # App wiring, checkout, NOVA Tools, and feature actions
+├── supabase/
+│   ├── config.toml
+│   ├── schema.sql
+│   └── functions/
+│       ├── create-checkout/index.ts
+│       └── stripe-webhook/index.ts
+├── .gitignore
+├── config.example.js
+└── README.md
+```
 
-## Enable customer accounts and payments
+The storefront remains a single-page app. Separate search, product, or profile pages are not included because those routes are not currently implemented.
+
+## Run locally
+
+The app uses JavaScript modules, so serve the project over HTTP instead of opening `index.html` directly with a `file://` URL.
+
+1. Copy `config.example.js` to `config.js` and set the Supabase project URL and public anon key if you want to enable account features.
+2. Start a local server from the repository root. For example, with Python on Windows:
+
+   ```powershell
+   py -m http.server 8000
+   ```
+
+   Or on macOS/Linux:
+
+   ```sh
+   python3 -m http.server 8000
+   ```
+
+3. Open `http://localhost:8000` in a browser.
+
+The storefront can be browsed without Supabase configuration. Account and checkout actions will explain when a service is not configured.
+
+## Frontend modules
+
+- `products.js` owns the sample catalog, category data, and product/comparison markup.
+- `cart.js` owns the cart and saved-product lists in `localStorage`.
+- `search.js` owns the current search, category, filter, sort, and discovery selections.
+- `auth.js` connects the account UI and order history to Supabase.
+- `app.js` joins the modules and handles checkout and the NOVA Tools actions.
+
+Stylesheets are loaded in order: `main.css`, `components.css`, then `animations.css`.
+
+## Supabase and Stripe setup
+
 1. Create a Supabase project.
 2. Run `supabase/schema.sql` in the Supabase SQL Editor.
-3. Copy `config.example.js` to `config.js` and set `supabaseUrl` and `supabaseAnonKey`.
+3. Set `supabaseUrl` and `supabaseAnonKey` in your local `config.js`.
 4. Deploy `supabase/functions/create-checkout/index.ts` and `supabase/functions/stripe-webhook/index.ts`.
-5. Set Edge Function secrets: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, and `SITE_URL`.
-6. In Stripe, add a webhook endpoint pointing to the deployed `stripe-webhook` function and subscribe to `checkout.session.completed` and `checkout.session.expired`.
-7. Configure the deployed site URL in Supabase Auth redirect settings and Stripe Checkout return URLs.
+5. Set these Edge Function secrets: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, and `SITE_URL`.
+6. Configure a Stripe webhook for `checkout.session.completed` and `checkout.session.expired`.
+7. Add the deployed site URL to Supabase Auth redirect settings and configure the Stripe Checkout return URLs.
 
-Use Stripe test mode first. Real payments require a verified Stripe account, live keys, webhook configuration, business/tax compliance, refund and dispute handling, and a production security review. Never commit real keys to GitHub.
+Use Stripe test mode first. Do not put a Supabase service-role key or Stripe secret in `config.js`, frontend JavaScript, or any committed file. The browser anon key is intended to be public; protect data with reviewed row-level security policies.
 
-## Important current limitations
-This is still a starter, not a production-ready Amazon-scale marketplace. The sample catalog is local demo data; the SQL seeds corresponding catalog records for checkout. Checkout is disabled until Supabase and Stripe are configured. The webhook currently updates payment status; production fulfillment must additionally persist line items, decrement inventory atomically, handle refunds/disputes/idempotency and reconcile payment events. Seller application approval, seller dashboards/payouts, shipping/tax calculation, review moderation, live price monitoring/notifications, social list sharing, AI-provider integration and customer support workflows still need implementation. The budget-based discovery helper is a local demo, not a generative AI service.
+## Current feature boundaries
 
-## Security notes
-- Keep Supabase service-role and Stripe secret keys in Edge Function secrets only.
-- Enable email confirmation, configure allowed redirect URLs, and use MFA for administrators.
-- Review RLS policies and test them with separate customer and seller accounts before launch.
-- Add rate limits, abuse prevention, audit logging, backups, privacy/terms/refund policies and payment compliance before accepting live transactions.
+- Checkout is disabled until Supabase and Stripe are configured. The Edge Function validates product prices and inventory server-side.
+- The sample catalog is local demo data; the SQL file seeds matching product records.
+- Price targets can be stored in Supabase when accounts are configured. Automatic price-drop notifications need a separate monitoring service.
+- Rewards balance and seller application status use the existing schema, but reward earning/redemption and seller storefronts/payouts are not enabled.
+- Shared lists, group voting, shipping/tax calculations, review moderation, production fulfillment, refund/dispute handling, customer support, and an AI-provider integration still need implementation.
+- NOVA AI suggestions use the sample catalog and budget locally; they are not generated by an AI service.
+
+Before accepting live payments, review RLS policies, fulfillment, inventory updates, idempotency, refunds and disputes, rate limits, backups, privacy/terms/refund policies, and payment compliance.

@@ -1,0 +1,7 @@
+# Local browser configuration (keep only config.example.js in Git)
+/config.js
+
+# Local tooling and operating-system files
+/node_modules/
+.DS_Store
+Thumbs.db
