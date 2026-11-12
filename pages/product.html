@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore product details, sample reviews, helpful comparisons, and buying information on NOVA.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Product details — NOVA Shopping</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<body class="detail-page">
+  <div class="announcement"><span aria-hidden="true">✦</span> A better place to find the things you’ll love <span aria-hidden="true">✦</span></div>
+  <header class="header" id="top">
+    <div class="header-shell">
+      <a class="brand" href="../index.html" aria-label="NOVA Shopping home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.3 9.7 21.3 12l-7 2.3-2.3 7-2.3-7-7-2.3 7-2.3 2.3-7Z" fill="currentColor"/><circle cx="18.7" cy="5.2" r="1.2" fill="currentColor"/></svg></span>
+        <span class="brand-word">NOVA<span>✦</span></span>
+      </a>
+      <a class="categories-button" href="../index.html#categoriesSection" aria-label="Browse categories"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Categories</span></a>
+      <form class="search" id="detailSearchForm" role="search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="detailSearchInput" type="search" placeholder="Search products, ideas, and more" aria-label="Search products">
+        <button type="submit">Search</button>
+      </form>
+      <button class="nova-ai-link" id="novaAiHeader" type="button"><span class="ai-spark" aria-hidden="true">✦</span><span>NOVA guide</span></button>
+      <div class="head-actions">
+        <button id="ordersNavBtn" type="button" aria-label="View orders"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16l-3.5-2-3.5 2-3.5-2L5 20V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9h7m-7 4h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="label">Orders</span></button>
+        <button id="accountBtn" type="button" aria-label="Open profile"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20c.6-3.6 2.8-5.4 6.5-5.4s5.9 1.8 6.5 5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="label" id="accountLabel">Profile</span></button>
+        <button id="savedBtn" type="button" aria-label="Show saved items"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 8.9c0 4.4-8.2 10-8.2 10s-8.2-5.6-8.2-10a4.2 4.2 0 0 1 7.6-2.5l.6.8.6-.8a4.2 4.2 0 0 1 7.6 2.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="label">Saved</span></button>
+        <button id="cartBtn" type="button" aria-label="Open cart"><svg class="action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.8 5.5h2l2 10.2h10.8l2-7.4H6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.3" r="1.2" fill="currentColor"/><circle cx="17.5" cy="19.3" r="1.2" fill="currentColor"/></svg><span class="label">Cart</span><span class="count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-wrap"><nav class="nav detail-category-nav" aria-label="Shop categories">
+    <a href="../index.html#productsSection">All</a><a href="../index.html?category=Electronics#productsSection">Tech</a><a href="../index.html?category=Fashion#productsSection">Fashion</a><a href="../index.html?category=Home#productsSection">Home</a><a href="../index.html?category=Beauty#productsSection">Beauty</a><a href="../index.html?category=Toys#productsSection">Gaming &amp; toys</a><a href="../index.html?category=Sports#productsSection">Sports</a><a href="../index.html?category=Books#productsSection">Books</a><a class="deals-link" href="../index.html?view=deals#productsSection">Deals worth seeing</a>
+  </nav></div>
+
+  <main class="detail-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a id="breadcrumbCategory" href="../index.html#categoriesSection">Shop</a><span aria-hidden="true">/</span><span id="breadcrumbBrand">NOVA</span><span aria-hidden="true">/</span><span id="breadcrumbProduct" aria-current="page">Product</span></nav>
+
+    <section class="detail-hero" id="overview" aria-labelledby="detailName">
+      <div class="product-gallery">
+        <div class="gallery-main" id="galleryStage">
+          <span class="gallery-label">SAMPLE CATALOG ART</span>
+          <button class="gallery-zoom" id="zoomImageBtn" type="button" aria-label="Zoom product illustration">⌕</button>
+          <img id="mainProductImage" src="../assets/images/headphones.svg" alt="Product illustration">
+          <span class="gallery-caption" id="galleryCaption">Product illustration · demo catalog</span>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs" aria-label="Product media options"></div>
+        <p class="media-disclosure">Illustrative catalog artwork. Multi-angle photos and product videos are not connected in this preview.</p>
+      </div>
+
+      <div class="product-info">
+        <p class="product-brand" id="detailBrand">NOVA Edit</p>
+        <h1 id="detailName">Loading product…</h1>
+        <p class="detail-rating"><span class="stars" aria-hidden="true">★★★★★</span><strong id="detailRating">—</strong><a href="#reviews" id="reviewsJump">View sample reviews</a></p>
+        <p class="detail-summary" id="detailSummary"></p>
+
+        <section class="nova-snapshot" aria-labelledby="snapshotTitle">
+          <div class="snapshot-heading"><span class="snapshot-spark" aria-hidden="true">✦</span><h2 id="snapshotTitle">NOVA snapshot</h2><span class="snapshot-demo">SAMPLE GUIDE</span></div>
+          <div class="snapshot-grid"><div><span>BEST FOR</span><p id="snapshotBestFor"></p></div><div><span>STANDOUT</span><p id="snapshotStandout"></p></div><div class="snapshot-caution"><span>BEFORE YOU BUY</span><p id="snapshotBefore"></p></div></div>
+          <p class="snapshot-note">Editorial preview based on the sample listing; not a personalized or AI-generated recommendation.</p>
+        </section>
+
+        <div class="detail-price-block"><div class="detail-price-line"><strong id="detailPrice">$0.00</strong><del id="detailOldPrice"></del><span class="saving-pill" id="detailSavings"></span></div><p>Sample catalog price · taxes and seller policies not connected</p></div>
+        <div class="product-options" id="productOptions"></div>
+        <p class="option-feedback" id="optionFeedback" hidden>Selection preview only. Variant inventory is not connected; the cart uses the base sample listing.</p>
+
+        <div class="buy-actions"><button class="primary-button detail-add" id="detailAddBtn" type="button" data-add="1">Add to Cart <span aria-hidden="true">→</span></button><button class="secondary-action" id="detailSaveBtn" type="button" data-save="1" aria-pressed="false">♡ <span>Save</span></button><button class="secondary-action" id="detailCompareBtn" type="button" aria-pressed="false">⚖ <span>Add to compare</span></button></div>
+        <div class="detail-assurances"><span><b>✓</b> Clear sample pricing</span><span><b>↗</b> Compare useful details</span><span><b>♡</b> Save for later</span></div>
+        <p class="catalog-disclosure">Ratings, review counts, prior prices, media, and purchase options on this page are sample data for the NOVA prototype.</p>
+      </div>
+    </section>
+
+    <nav class="quick-nav" aria-label="Product information sections">
+      <a class="active" href="#overview" aria-current="location">Overview</a><a href="#whyNOVA">Why NOVA Recommends It</a><a href="#beforeYouBuy">Before You Buy</a><a href="#watch">Watch</a><a href="#reviews">Reviews</a><a href="#compare">Compare</a><a href="#specs">Specs</a>
+    </nav>
+
+    <section class="decision-section" id="whyNOVA" aria-labelledby="decisionTitle">
+      <div class="section-heading"><p class="section-kicker">THE NOVA DECISION CENTER</p><h2 id="decisionTitle">Make the choice with a little more clarity.</h2><p>Useful context, right beside the product details.</p></div>
+      <div class="decision-grid">
+        <article class="match-panel"><span class="decision-icon" aria-hidden="true">✦</span><p class="section-kicker">IS THIS RIGHT FOR ME?</p><h3>Looks like a strong match for your priorities.</h3><p id="matchCopy"></p><div class="match-priorities"><span>Everyday use</span><span>Clear listing</span><span>Sample catalog</span></div><button class="text-button" id="alternativesJump" type="button">Explore other directions <span aria-hidden="true">→</span></button></article>
+        <article class="before-panel" id="beforeYouBuy"><p class="section-kicker">A HELPFUL PAUSE</p><h3>Before you buy</h3><p class="before-lead">Consider another option if…</p><ul class="consider-list" id="considerList"></ul><p class="before-footnote">These notes point out information missing from the demo listing. Confirm details with a seller before purchase.</p></article>
+      </div>
+      <div class="fit-grid"><article><h3><span aria-hidden="true">✓</span> Best for</h3><ul id="bestForList"></ul></article><article><h3><span aria-hidden="true">→</span> Consider another option if</h3><ul id="anotherOptionList"></ul></article></div>
+    </section>
+
+    <section class="watch-section" id="watch" aria-labelledby="watchTitle">
+      <div class="section-heading section-heading-row"><div><p class="section-kicker">PRODUCT-SPECIFIC VIDEO PREVIEWS</p><h2 id="watchTitle">Watch This Product</h2><p>Reviews, real-world tests, unboxings, and comparisons for this item.</p></div><button class="text-button" id="watchMoreBtn" type="button">Watch More <span aria-hidden="true">→</span></button></div>
+      <div class="video-grid" id="videoGrid"></div>
+      <p class="section-disclosure">Video cards are illustrative placeholders for this product. Creator uploads and video playback are not connected.</p>
+    </section>
+
+    <section class="reviews-section" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="section-heading"><p class="section-kicker">A CLOSER LOOK AT THE EVIDENCE</p><h2 id="reviewsTitle">What are people saying?</h2><p>Explore a sample review layout before customer-submitted reviews are connected.</p></div>
+      <div class="review-summary">
+        <article><p class="summary-label">PEOPLE LOVE · SAMPLE THEMES</p><ul id="peopleLoveList"></ul></article>
+        <article><p class="summary-label">COMMON CONCERNS · SAMPLE THEMES</p><ul id="concernsList"></ul></article>
+        <aside><span class="summary-stars">★★★★★</span><strong id="reviewScore">—</strong><small id="reviewCount">Sample catalog rating</small><p>Sample rating · no verified-purchase review feed connected</p></aside>
+      </div>
+      <div class="review-tools"><label class="review-search"><span>Search sample reviews</span><input id="reviewSearch" type="search" placeholder="Search by detail or keyword"></label><label>Filter<select id="reviewFilter"><option value="all">All sample reviews</option><option value="5">5 stars</option><option value="4">4 stars</option></select></label><label>Sort<select id="reviewSort"><option value="recent">Most recent</option><option value="high">Highest rated</option><option value="low">Lowest rated</option></select></label><button class="chip" id="reviewMediaBtn" type="button">View photos &amp; videos</button></div>
+      <p class="summary-disclosure">The NOVA summary preview below is static demo copy, not AI-generated. Individual review cards are also placeholders, not customer submissions.</p>
+      <div class="review-list" id="reviewList"></div>
+    </section>
+
+    <section class="compare-section" id="compare" aria-labelledby="compareHeading">
+      <div class="section-heading section-heading-row"><div><p class="section-kicker">A FEW USEFUL DIRECTIONS</p><h2 id="compareHeading">Compare your options.</h2><p>Sample-catalog alternatives, grouped by what they do differently.</p></div><button class="primary-button compare-all" id="compareAllBtn" type="button">Compare All Products <span aria-hidden="true">→</span></button></div>
+      <div class="alternative-grid" id="alternativeGrid"></div>
+      <p class="section-disclosure">Alternative suggestions are drawn from NOVA’s small sample catalog; some are adjacent picks rather than direct competitors.</p>
+    </section>
+
+    <section class="specs-section" id="specs" aria-labelledby="specsTitle">
+      <div class="section-heading"><p class="section-kicker">THE DETAILS, IN PLAIN ENGLISH</p><h2 id="specsTitle">Specs that matter.</h2><p>Sample listing details, translated into the questions shoppers may want to ask.</p></div>
+      <div class="spec-explainer-grid" id="specExplainerGrid"></div>
+      <details class="full-specs"><summary>View Full Specifications</summary><dl id="fullSpecsList"></dl><p>Technical values beyond the sample catalog require seller-provided product data.</p></details>
+    </section>
+
+    <section class="price-section" id="priceIntelligence" aria-labelledby="priceTitle">
+      <div class="section-heading"><p class="section-kicker">PRICE &amp; BUYING INTELLIGENCE</p><h2 id="priceTitle">A clearer view of the buying decision.</h2><p>Illustrative price context while NOVA’s live offer and history feeds are in development.</p></div>
+      <div class="price-intel-grid">
+        <article class="price-current"><span class="price-card-label">CURRENT SAMPLE PRICE</span><strong id="intelligencePrice">$0.00</strong><span id="intelligencePrevious"></span><div class="price-chart" id="priceChart"></div><small>Illustrative chart only · no historical feed connected</small><button class="secondary-button" id="priceAlertBtn" type="button">Set Price Alert <span aria-hidden="true">⌄</span></button></article>
+        <article class="buying-options"><div class="buying-heading"><div><span class="price-card-label">BUYING OPTIONS</span><h3>Example ways to compare.</h3></div><span class="sample-pill">SAMPLE DATA</span></div><div id="buyingOptions"></div><p>Shipping, delivery estimates, seller availability, and taxes are examples only.</p></article>
+      </div>
+    </section>
+
+    <section class="accessories-section" id="accessories" aria-labelledby="accessoriesTitle">
+      <div class="section-heading"><p class="section-kicker">THOUGHTFUL PAIRINGS</p><h2 id="accessoriesTitle">You may also need.</h2><p>Suggestions with a reason to be here, not just another product row.</p></div>
+      <div class="accessory-grid" id="accessoryGrid"></div>
+    </section>
+
+    <section class="details-section" id="fullDetails" aria-labelledby="fullDetailsTitle">
+      <div class="section-heading"><p class="section-kicker">EVERYTHING IN ONE PLACE</p><h2 id="fullDetailsTitle">Full product details.</h2></div>
+      <div class="details-accordions">
+        <details open><summary>Full description</summary><p id="fullDescription"></p></details>
+        <details><summary>What’s included</summary><p id="includedDetails">Package contents are not supplied in this sample listing. Confirm included items with the seller.</p></details>
+        <details><summary>Compatibility &amp; care</summary><p id="compatibilityDetails">Compatibility, dimensions, and care guidance are not connected for this sample product. Confirm requirements before purchase.</p></details>
+        <details><summary>Shipping &amp; delivery</summary><p>Delivery estimates shown elsewhere on this page are illustrative. NOVA does not have a connected fulfillment or shipping policy for this sample catalog.</p></details>
+        <details><summary>Returns &amp; warranty</summary><p>Return eligibility and warranty terms depend on the seller and are not connected in this prototype. Review seller policies before purchase.</p></details>
+      </div>
+    </section>
+
+    <section class="related-section" aria-labelledby="relatedTitle"><div class="section-heading section-heading-row"><div><p class="section-kicker">KEEP EXPLORING</p><h2 id="relatedTitle">Related products.</h2></div><a class="text-button" href="../index.html#productsSection">Browse the full catalog <span aria-hidden="true">→</span></a></div><div class="related-grid" id="relatedProducts"></div></section>
+    <section class="recent-section" aria-labelledby="recentTitle"><div class="section-heading"><p class="section-kicker">RIGHT WHERE YOU LEFT OFF</p><h2 id="recentTitle">Recently viewed.</h2></div><div class="related-grid" id="recentProducts"></div></section>
+  </main>
+
+  <footer class="footer detail-footer">
+    <div class="footer-main"><div class="footer-brand"><a class="brand" href="../index.html" aria-label="NOVA Shopping home"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-word">NOVA<span>✦</span></span></a><p>Find your next favorite thing.</p></div><div class="footer-column"><h2>Shop</h2><a href="../index.html#productsSection">Trending</a><a href="../index.html#categoriesSection">Categories</a><a href="../index.html?view=deals#productsSection">Curated deals</a></div><div class="footer-column"><h2>NOVA</h2><a href="#whyNOVA">Decision center</a><a href="#watch">Product video previews</a><a href="#compare">Compare options</a></div><div class="footer-column"><h2>Help</h2><a href="#fullDetails">Product details</a><button type="button" id="ordersFooterBtn">Order history</button></div><div class="footer-column"><h2>Community</h2><a href="../index.html#aboutNova">About NOVA</a><a href="#reviews">Review previews</a></div></div>
+    <div class="footer-bottom"><span>© 2026 NOVA Shopping · Independent demo storefront</span><span>Thoughtful discovery. Clear choices.</span></div>
+  </footer>
+
+  <div class="mobile-buy-bar"><div><small>Sample price</small><strong id="mobilePrice">$0.00</strong></div><button class="primary-button" id="mobileAddBtn" type="button" data-add="1">Add to Cart <span aria-hidden="true">→</span></button></div>
+
+  <div class="overlay" id="cartOverlay" aria-hidden="true"><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="drawer-head"><h2 id="cartTitle">Your cart</h2><button class="close" id="closeCart" type="button" aria-label="Close cart">✕</button></div><div id="cartItems"></div><div class="total"><span>Subtotal</span><span id="cartTotal">$0.00</span></div><p class="checkout-note">Secure Stripe-hosted checkout. Payments activate after backend setup.</p><button class="checkout" id="checkoutBtn" type="button">Continue to secure checkout →</button></aside></div>
+  <div class="modal" id="accountModal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="drawer-head"><h2 id="authTitle">Welcome to NOVA</h2><button class="close" id="closeAccount" type="button" aria-label="Close account">✕</button></div><p id="authMessage">Sign in or create your NOVA customer account.</p><label>Email address<input type="email" id="emailInput" autocomplete="email" placeholder="you@example.com"></label><label>Password<input type="password" id="passwordInput" autocomplete="current-password" minlength="8" placeholder="At least 8 characters"></label><button class="checkout" id="signInBtn" type="button">Sign in</button><button class="chip" id="signUpBtn" type="button">Create account</button><button class="chip" id="signOutBtn" type="button">Sign out</button><div id="accountDetails" class="account-details"></div></div></div>
+  <div class="modal" id="compareModal" aria-hidden="true"><div class="modal-card compare-modal-card" role="dialog" aria-modal="true" aria-labelledby="compareTitle"><div class="drawer-head"><h2 id="compareTitle">Compare your options</h2><button class="close" id="closeCompare" type="button" aria-label="Close comparison">✕</button></div><div id="compareBody"></div></div></div>
+  <div class="modal" id="videoModal" aria-hidden="true"><div class="modal-card video-modal-card" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle"><div class="drawer-head"><h2 id="videoModalTitle">Product video preview</h2><button class="close" id="closeVideo" type="button" aria-label="Close video preview">✕</button></div><div class="video-modal-art" id="videoModalArt"></div><p id="videoModalMessage">Product-specific videos will appear here when creator media is connected.</p><span class="sample-pill">ILLUSTRATIVE PLACEHOLDER</span></div></div>
+  <div class="modal" id="priceAlertModal" aria-hidden="true"><div class="modal-card price-alert-card" role="dialog" aria-modal="true" aria-labelledby="priceAlertTitle"><div class="drawer-head"><h2 id="priceAlertTitle">Set a price alert</h2><button class="close" id="closePriceAlert" type="button" aria-label="Close price alert">✕</button></div><p>Choose a target for this sample product.</p><form id="priceAlertForm"><label for="priceAlertInput">Alert me below</label><div class="alert-input-wrap"><span>$</span><input id="priceAlertInput" type="number" min="0.01" step="0.01" required></div><p class="section-disclosure">Saved on this device only. Automatic monitoring and notifications are not connected.</p><button class="checkout" type="submit">Save target</button></form></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Optional local settings: copy ../config.example.js to config.js; config.js is ignored by Git. -->
+  <script src="../config.js"></script>
+  <script type="module" src="../js/product-page.js"></script>
+</body>
+</html>
+

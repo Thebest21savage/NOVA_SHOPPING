@@ -60,9 +60,10 @@ export function renderProducts(viewState, saved, compareIds) {
         '<div class="product-actions">' +
           '<button class="round-action ' + (saved.includes(product.id) ? "saved" : "") + '" data-save="' + product.id + '" type="button" aria-label="' + (saved.includes(product.id) ? "Remove " + product.name + " from saved items" : "Save " + product.name) + '">' + (saved.includes(product.id) ? "♥" : "♡") + '</button>' +
           '<button class="round-action ' + (compareIds.includes(product.id) ? "compare-picked" : "") + '" data-compare="' + product.id + '" type="button" aria-label="' + (compareIds.includes(product.id) ? "Remove " + product.name + " from comparison" : "Add " + product.name + " to comparison") + '">⚖</button>' +
-        '</div><img class="product-image" src="' + product.image + '" alt="' + product.name + '" loading="lazy" decoding="async">' +
-      '</div><h3>' + product.name + '</h3><div class="rating" aria-label="' + product.rating + ' out of 5 stars">★★★★★ <small>' + product.rating + ' (' + product.reviews.toLocaleString() + ')</small></div>' +
+        '</div><a class="product-image-link" href="./pages/product.html?id=' + product.id + '" aria-label="View details for ' + product.name + '"><img class="product-image" src="' + product.image + '" alt="' + product.name + '" loading="lazy" decoding="async"></a>' +
+      '</div><h3><a class="product-title-link" href="./pages/product.html?id=' + product.id + '">' + product.name + '</a></h3><div class="rating" aria-label="' + product.rating + ' out of 5 stars">★★★★★ <small>' + product.rating + ' (' + product.reviews.toLocaleString() + ')</small></div>' +
       '<div class="price">' + money(product.price) + (product.old ? '<span class="old">' + money(product.old) + '</span>' : "") + '</div>' +
+      '<a class="product-detail-link" href="./pages/product.html?id=' + product.id + '">Explore product details <span aria-hidden="true">→</span></a>' +
       '<div class="delivery"><span class="delivery-mark">✓</span> Free delivery on demo orders</div><button class="add" data-add="' + product.id + '" type="button">Add to cart</button></article>'
   ).join("") : '<div class="empty">No products found. Try another search or category.</div>';
 }

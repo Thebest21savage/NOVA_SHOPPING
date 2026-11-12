@@ -2,7 +2,7 @@
 
 **Discover better. Shop smarter.**
 
-NOVA is a single-page shopping storefront with product discovery, customer accounts, saved items, a cart, and an integration-ready Supabase and Stripe foundation.
+NOVA is a shopping storefront with product discovery, a product detail experience, customer accounts, saved items, a cart, and an integration-ready Supabase and Stripe foundation.
 
 The storefront uses a light, editorial retail layout with locally stored sample product illustrations. Ratings, previous prices, comparison sources, and delivery examples are demo content, not live marketplace data. The NOVA AI budget helper filters the local sample catalog; it does not use an AI service or a customer taste profile.
 
@@ -11,18 +11,24 @@ The storefront uses a light, editorial retail layout with locally stored sample 
 ```text
 NOVA_SHOPPING/
 ├── index.html
+├── pages/
+│   └── product.html     # Product detail, decision, review, and buying experience
 ├── assets/
 │   └── images/           # Original local product and category illustrations
 ├── css/
 │   ├── main.css          # Design tokens, base styles, header, hero, page layout
 │   ├── components.css    # Product cards, categories, tools, dialogs, responsive rules
 │   └── animations.css    # Motion, ambient effects, reduced-motion support
+│   ├── product-detail.css # Product page layout, media, decision sections, responsive styles
 ├── js/
 │   ├── products.js       # Sample catalog, categories, product and comparison rendering
 │   ├── cart.js           # Cart and saved-item state, local storage, cart drawer
 │   ├── search.js         # Search, categories, filters, sorting, discovery state
 │   ├── auth.js           # Supabase sign-in, sign-up, sign-out, and order history
-│   └── app.js            # App wiring, checkout, NOVA Tools, and feature actions
+│   ├── checkout.js       # Shared Stripe Checkout handoff
+│   ├── product-detail-data.js # Product-specific decision notes for the sample catalog
+│   ├── product-page.js   # Product page gallery, reviews, comparisons, and interactions
+│   ├── app.js            # Homepage wiring, NOVA Tools, and feature actions
 ├── supabase/
 │   ├── config.toml
 │   ├── schema.sql
@@ -34,7 +40,7 @@ NOVA_SHOPPING/
 └── README.md
 ```
 
-The storefront remains a single-page app. Separate search, product, or profile pages are not included because those routes are not currently implemented.
+Product detail links open `pages/product.html?id=<product-id>`. Search, account, cart, and order history continue to use the shared storefront modules. Separate search and profile routes are not currently implemented.
 
 ## Run locally
 
@@ -64,6 +70,9 @@ The storefront can be browsed without Supabase configuration. Account and checko
 - `search.js` owns the current search, category, filter, sort, and discovery selections.
 - `auth.js` connects the account UI and order history to Supabase.
 - `app.js` joins the modules and handles checkout and the NOVA Tools actions.
+- `checkout.js` shares the existing Supabase Edge Function checkout handoff between the homepage and product page.
+- `product-detail-data.js` contains clearly labeled prototype notes for each seeded sample product. Review, video, buying-option, and price-history examples are illustrative; they are not live feeds.
+- `product-page.js` renders product details, gallery states, comparison, local price-alert preferences, and the responsive section navigation.
 
 Stylesheets are loaded in order: `main.css`, `components.css`, then `animations.css`.
 

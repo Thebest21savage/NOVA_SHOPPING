@@ -1,9 +1,19 @@
 import { byId, comparisonTable, products, renderCategories, renderProducts } from "./products.js";
-import { cartItemsForCheckout, getSavedItems, initCart } from "./cart.js";
+import { getSavedItems, initCart } from "./cart.js";
 import { initSearch, showDiscoveryResults, viewState } from "./search.js";
 import { getCurrentUser, getSupabase, initAuth } from "./auth.js";
+import { startCheckout } from "./checkout.js";
 
-let compareIds = [];
+function readCompareIds() {
+  try {
+    const ids = JSON.parse(localStorage.getItem("nova-compare") || "[]");
+    return Array.isArray(ids) ? ids.map(Number).filter(id => products.some(product => product.id === id)).slice(0,3) : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+let compareIds = readCompareIds();
 
 function notify(message) {
   const toast = document.getElementById("toast");
@@ -80,29 +90,6 @@ function setupTools() {
   document.querySelectorAll("[data-open-tools]").forEach(button => button.addEventListener("click", () => openTools(button.dataset.openTools)));
 }
 
-async function startCheckout() {
-  const items = cartItemsForCheckout();
-  if (!items.length) return;
-  const supabase = getSupabase();
-  if (!supabase) { notify("Connect Supabase and Stripe to enable secure checkout."); return; }
-  if (!getCurrentUser()) {
-    document.getElementById("cartOverlay").classList.remove("open");
-    document.getElementById("cartOverlay").setAttribute("aria-hidden","true");
-    document.getElementById("accountModal").classList.add("open");
-    document.getElementById("accountModal").setAttribute("aria-hidden","false");
-    notify("Please sign in before checkout.");
-    return;
-  }
-  try {
-    const {data,error} = await supabase.functions.invoke("create-checkout",{body:{items}});
-    if (error) throw error;
-    if (!data?.url) throw new Error("Checkout URL missing");
-    location.assign(data.url);
-  } catch (error) {
-    notify(error.message || "Could not start checkout");
-  }
-}
-
 function setupComparison() {
   document.addEventListener("click", event => {
     const compareButton = event.target.closest("[data-compare]");
@@ -111,6 +98,7 @@ function setupComparison() {
     if (compareIds.includes(id)) compareIds = compareIds.filter(item => item !== id);
     else if (compareIds.length < 3) compareIds = [...compareIds,id];
     else { notify("Compare up to three products at a time."); return; }
+    localStorage.setItem("nova-compare", JSON.stringify(compareIds));
     renderPage();
     notify(compareIds.includes(id) ? "Added to your comparison" : "Removed from comparison");
   });
@@ -205,6 +193,7 @@ initAuth(notify);
 setupTools();
 setupComparison();
 setupShoppingTools();
-document.getElementById("checkoutBtn").addEventListener("click",startCheckout);
+document.getElementById("checkoutBtn").addEventListener("click",() => startCheckout(notify));
 renderPage();
 setupKeyboardAndMotion();
+

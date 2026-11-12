@@ -8,6 +8,7 @@
 .product-art.tone-books { background: #f4f0e8; }
 .product-art.tone-toys { background: #f2eff8; }
 .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.product-image-link { display: block; width: 100%; height: 100%; overflow: hidden; }
 .product:hover .product-image { transform: scale(1.035); }
 .tag { position: absolute; z-index: 1; top: 10px; left: 10px; padding: 5px 7px; background: rgba(255,255,255,.94); color: #5a5364; font-size: 9px; font-weight: 650; }
 .tag.nova-tag { background: #eee8f6; color: #563f86; }
@@ -16,6 +17,10 @@
 .round-action:hover { transform: translateY(-1px); color: var(--purple); }
 .round-action.saved, .round-action.compare-picked { background: var(--purple); color: #fff; }
 .product h3 { min-height: 36px; margin: 12px 0 4px; font-size: 12px; font-weight: 600; line-height: 1.45; }
+.product-title-link { color: inherit; text-decoration: none; }
+.product-title-link:hover { color: var(--purple); }
+.product-detail-link { display: flex; justify-content: space-between; gap: 8px; margin-top: 7px; color: var(--purple-dark); font-size: 9px; font-weight: 650; text-decoration: none; }
+.product-detail-link:hover { color: #36245d; text-decoration: underline; text-underline-offset: 2px; }
 .rating { color: #bd8740; font-size: 11px; letter-spacing: .06em; white-space: nowrap; }
 .rating small { color: #7e7886; font-size: 9px; letter-spacing: 0; }
 .price { margin-top: 6px; font-size: 15px; font-weight: 700; }

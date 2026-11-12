@@ -1,3 +1,5 @@
+import { categories } from "./products.js";
+
 export const viewState = {
   category: "All",
   filter: "All",
@@ -46,6 +48,23 @@ export function showDiscoveryResults(ids, render) {
 }
 
 export function initSearch(render) {
+  const params = new URLSearchParams(window.location.search);
+  const incomingQuery = (params.get("q") || "").trim();
+  const incomingCategory = params.get("category");
+  const validCategories = new Set(categories.map(([name]) => name));
+  if (incomingQuery) {
+    viewState.query = incomingQuery;
+    document.getElementById("searchInput").value = incomingQuery;
+  } else if (incomingCategory && validCategories.has(incomingCategory)) {
+    viewState.category = incomingCategory;
+  } else if (params.get("view") === "deals") {
+    viewState.dealsOnly = true;
+    viewState.filter = "Deals";
+  } else if (params.get("view") === "saved") {
+    viewState.savedOnly = true;
+  }
+  document.querySelectorAll("[data-filter]").forEach(button => button.classList.toggle("active", button.dataset.filter === viewState.filter));
+
   document.getElementById("categoriesBtn").addEventListener("click", scrollToCategories);
 
   document.addEventListener("click", event => {
